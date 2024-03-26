@@ -1,0 +1,69 @@
+.cajagrande {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .box-galery1 {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 7px;
+  }
+  
+  .galery1 {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .box-img {
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bici {
+    width: 13em;
+    height: 13em;
+  }
+  
+  .frase {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.699);
+  
+    color: rgb(252, 252, 252);
+    display: flex;
+    border-radius: 5px;
+    width: 13em;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 15px;
+  }
+  
+  .frase1 {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.699);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 13em;
+    font-size: 15px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .btn-imgs {
+    position: absolute;
+    background-color: blue;
+    text-decoration: none;
+    padding: 0.5em 3em;
+    color: aliceblue;
+    font-size: 1em;
+    margin-top: 7em;
+    border-radius: 0.5em;
+  }

@@ -19,7 +19,7 @@ function Navbar() {
           <img src={logoBike} alt="Logo" className="logo" />
           <div className="container">
             <div className="btn">
-              <input type="text" placeholder="Buscar" />
+              <input className='input' type="text" placeholder="Buscar" />
               <i className="fa fa-search"></i>
             </div>
           </div>
