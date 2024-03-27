@@ -17,7 +17,6 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    position: fixed;
     bottom: 0;
     margin-top: auto;
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import "../productos/productos.css"
+import "../Productos/productos.css";
 import imag1 from "../../img/homepeq1.png";
 import imag2 from "../../img/homepeq2.png";
 import imag3 from "../../img/homepeq3.png";
