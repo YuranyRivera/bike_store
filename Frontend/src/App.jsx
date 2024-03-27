@@ -1,5 +1,7 @@
 import './App.css'
 import Catalogo from './assets/components/Catalogo'
+import Inicio from './assets/components/Inicio/Inicio'
+import Registro from './assets/components/Registro/Registro'
 
 
 function App() {
@@ -9,6 +11,8 @@ function App() {
     <>
       <div>
         <Navbar/>
+        <Inicio/>
+        <Registro/>
 
    
       </div>
