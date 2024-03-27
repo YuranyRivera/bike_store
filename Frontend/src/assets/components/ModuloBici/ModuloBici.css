@@ -1,0 +1,9 @@
+.paginaPrincipal {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .filtro {
+    width: 200px; /* Ancho del filtro */
+    margin-right: 20px; /* Espacio entre el filtro y el catálogo */
+  }

@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-size: contain; /* Ajusta la imagen de fondo para que quepa dentro del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    background-position: center; /* Centra la imagen de fondo */
+  }
+  
+  /**catalogo**/
+  .imagen_bici {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  
+ 
+  
+  .catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+    
+  }
+    
+    
+    .bicicleta {
+      width: 230px;
+      height: 340px;
+      max-width: 100%;
+      max-height: 100%;
+      margin: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .bicicleta:hover {
+      transform: scale(1.05); /* Aumentar el tamaño al pasar el mouse */
+      box-shadow: 0px 10px 10px rgba(117, 193, 255, 0.74); /* Cambiar la sombra al pasar el mouse */
+    }
+    .bicicleta img {
+      max-width: 100%;
+      height: 40%;
+      padding: 5px;
+      max-height: 100%;
+      object-fit: contain; /* Ajusta la imagen dentro del contenedor */
+    }
+    
+    .bicicleta h2 {
+      margin-top: 10px;
+      font-size: 18px;
+      padding: 9px;
+    }
+    
+    .bicicleta p {
+      margin: 3px;
+      font-weight: bold;
+      font-size: 24px;
+      padding: 3px
+    }
+    
+    .boton_catalago {
+      /* Estilos específicos de la clase boton_catalago */
+      padding: 7px 20px;
+      width: 57%;
+      font-size: 14px;
+      background-color: blue;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      align-self: center;
+      margin: 3px;
+    }
+    
+    .boton_catalago:hover {
+      /* Estilos específicos de la clase boton_catalago al pasar el mouse */
+      background-color: #0056b3;
+    }
+  
+  .cuadro {
+    float: left; /* Hace que el cuadro flote a la izquierda */
+    width: 200px;
+    margin: 20px; /* Margen alrededor del cuadro */
+    border-radius: 10px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
+    background-color: rgb(231, 231, 231);
+    height: 640px;
+  }
+  
+  .contenedor2 {
+    display: flex;
+    justify-content: center;
+    
+  
+  }
+  
+  .cuadro {
+    max-width: 100%;
+  }
+  
+  
+  .cuadro p,
+  h2,
+  input {
+    margin: 10px;
+  }
+  
+  .boton_filtro {
+    padding: 10px 20px;
+  /* Ajusta el padding según sea necesario */
+  width: 80px;
+  margin: 20px;
+  font-size: 16px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center; /* Centra el botón horizontalmente */
+   
+  }
+ 
