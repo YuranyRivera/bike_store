@@ -43,14 +43,15 @@ function Filtro() {
           <h2>Precio</h2>
           <div>
             <label htmlFor="minPrice">Min:</label>
-            <input type="number" id="minPrice" min="10" max="50" />
+            <input type="number" id="minPrice" min="10" max="50" className="filtro-input"/>
           </div>
           <div>
             <label htmlFor="maxPrice">Max:</label>
-            <input type="number" id="maxPrice" min="10" max="50" />
+            <input type="number" id="maxPrice" min="10" max="50" className="filtro-input" />
           </div>
   
-          <button onClick={() => filtrar()}>Filtrar</button>
+          <div className="boton_filtro" onClick={() => filtrar()}>Filtrar</div>
+
         </div>
       </div>
     );

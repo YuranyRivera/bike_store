@@ -14,7 +14,6 @@ export const Home = () => {
     <FondoHome/>
     <Productos/>
     <Catalogo />
-    <Filtro/>
     <Footer />
 
       </>

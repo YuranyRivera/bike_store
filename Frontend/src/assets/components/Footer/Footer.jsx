@@ -3,7 +3,9 @@ import "../Footer/Footer.css";
 
 function Footer (){
     return(
-<footer id="fondo">
+      <div className="page-container">
+      <footer id="fondo">
+
         <img className="icoFooter" src="/IMG/logo.png" alt="" />
         <div className="iconoContacto">
           <img src="/IMG/iconoCelularFooter.png" className="imgnone" alt="" />
@@ -58,7 +60,9 @@ function Footer (){
           <p className="p1">Responsabilidad Social</p>
         </div>
       </footer>
-      
+
+      </div>
+
     );
 }
 

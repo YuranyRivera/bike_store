@@ -5,6 +5,7 @@ import FondoBici from './assets/components/FondoBici/FondoBici'
 import Footer from './assets/components/Footer/Footer'
 
 
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -15,7 +16,8 @@ function App() {
         <Filtro/>
         <FondoBici/>
         <Footer/>
-   
+
+
       </div>
      
     </>

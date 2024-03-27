@@ -2,6 +2,7 @@ import React from 'react';
 import "../FondoBici/fondobici.css"
 import bici_1 from "../../img/Bicicleta.png";
 
+
 function FondoBici(){
   return (
     <body>
