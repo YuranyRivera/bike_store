@@ -15,20 +15,7 @@ body {
     padding: 0;
   }
   
-  .texto-superpuesto {
-    position: absolute;
-    top: auto;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 5vw;
-    /* Tamaño de fuente relativo al ancho del viewport */
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    height: 30vw;
-    max-height: 100%;
-  }
+ 
   
   .catalogo {
     display: flex;
@@ -36,25 +23,24 @@ body {
     justify-content: center;
     width: 50%;
     margin: auto;
-  
-    }
     
+  }
     
     
     .bicicleta {
-      width: 200px; /* Ancho fijo */
-      height: 300px; /* Alto fijo */
-      max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
-      max-height: 100%; /* Asegura que no exceda el alto del contenedor */
+      width: 230px;
+      height: 340px;
+      max-width: 100%;
+      max-height: 100%;
       margin: 20px;
       padding: 15px;
       border-radius: 10px;
       text-align: center;
       box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease;
-      display: flex; /* Agrega flexbox */
-      flex-direction: column; /* Establece la dirección de los elementos como columna */
-      justify-content: space-between; /* Distribuye el espacio verticalmente */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     
     .bicicleta:hover {
@@ -82,24 +68,25 @@ body {
       padding: 3px
     }
     
-    .bicicleta button {
-    padding: 7px 20px; /* Reducir el padding para hacer el botón más pequeño */
-    font-size: 14px; /* Tamaño de fuente más pequeño */
-    background-color: blue;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    align-self: center;
-    margin: 3px;
-    /* Centrar el botón dentro del contenedor de la tarjeta */
-  }
-  
-  .bicicleta button:hover {
-    background-color: #0056b3;
-  }
-  
+    .boton_catalago {
+      /* Estilos específicos de la clase boton_catalago */
+      padding: 7px 20px;
+      width: 57%;
+      font-size: 14px;
+      background-color: blue;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      align-self: center;
+      margin: 3px;
+    }
+    
+    .boton_catalago:hover {
+      /* Estilos específicos de la clase boton_catalago al pasar el mouse */
+      background-color: #0056b3;
+    }
   
   .cuadro {
     float: left; /* Hace que el cuadro flote a la izquierda */
@@ -114,7 +101,7 @@ body {
   .contenedor2 {
     display: flex;
     justify-content: center;
-    padding: 30px;
+    
   
   }
   
@@ -129,17 +116,19 @@ body {
     margin: 10px;
   }
   
-  .cuadro button {
+  .boton_filtro {
     padding: 10px 20px;
-    /* Ajusta el padding según sea necesario */
-    width: 80px;
-    margin: 20px;
-    font-size: 16px;
-    background-color: blue;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    align-self: center; /* Centra el botón horizontalmente */
+  /* Ajusta el padding según sea necesario */
+  width: 80px;
+  margin: 20px;
+  font-size: 16px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center; /* Centra el botón horizontalmente */
+   
   }
+ 
