@@ -3,6 +3,8 @@ import "../Catalogo/catalogo.css"
 import bici_1 from "../../img/bici_1.png"
 
 function Catalogo() {
+
+    
     return (
         <body>
         <div className="catalogo">

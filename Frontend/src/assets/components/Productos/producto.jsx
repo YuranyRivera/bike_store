@@ -6,6 +6,7 @@ import imag3 from "../../img/homepeq3.png";
 
 
 function FondoBici(){
+  
   return (
     <body>
         
