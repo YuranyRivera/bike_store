@@ -1,12 +1,17 @@
 import React from "react";
-import "../Footer/Footer.css";
-import logo from "../../img/logo.png";
+
+
+import "../Footer/Footer.css"
+import logoBike from "../../img/logobikestore.png"
+
+
 function Footer (){
     return(
       <div className="page-container">
       <footer id="fondo">
 
-      <img src= {logo}  className="icoFooter " alt="logo" />
+        <img className="icoFooter" src= {logoBike} alt="logo" />
+
         <div className="iconoContacto">
           <img src="/IMG/iconoCelularFooter.png" className="imgnone" alt="" />
           <a className="linkCorreo" href="">
