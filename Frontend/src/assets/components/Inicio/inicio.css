@@ -40,7 +40,7 @@ label {
     opacity: 0.75;
 }
 
-input {
+.monda {
     display: flex;
     border-radius: 50px;
     border-style: none;
@@ -52,7 +52,7 @@ input {
     box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
 }
 
-input:focus {
+.input:focus {
     opacity: 0.7;
 }
 
@@ -90,6 +90,7 @@ button {
 .imgrd {
     height: 150px;
     width: 150px;
+    
 }
 
 .upper-form {
@@ -159,7 +160,7 @@ button {
       max-width: 270px; /* Establece un ancho máximo para evitar que el formulario se extienda demasiado en pantallas grandes */
       padding: 20px;
     }
-    input {
+    .monda {
         width: 100%;
         padding: 10px;
         margin-top: 15px;
@@ -171,3 +172,4 @@ button {
         margin: 20px 0;
       }
   }  
+

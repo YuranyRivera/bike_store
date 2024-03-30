@@ -38,7 +38,7 @@ label {
     opacity: 0.75;
 }
 
-input {
+.monda {
     display: flex;
     border-radius: 50px;
     border-style: none;
@@ -188,7 +188,7 @@ button {
 
     }
 
-    input {
+    .monda {
         max-width: 100%;
         width: 270px;
         margin-top: 25px;

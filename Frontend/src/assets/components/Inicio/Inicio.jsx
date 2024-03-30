@@ -1,5 +1,6 @@
 import React from 'react';
 import "../Inicio/inicio.css"
+import "..//../img/logoredondeado.png"
 
 function Inicio() {
     return (
@@ -16,8 +17,8 @@ function Inicio() {
     <div className="upper-form">
         <form action="" className="formulario">
             <h2>Iniciar sesión</h2>
-            <input type="text" placeholder="Correo electrónico" />
-            <input type="password" placeholder="Contraseña" />
+            <input className='monda' type="text" placeholder="Correo electrónico" />
+            <input className='monda' type="password" placeholder="Contraseña" />
             <a href="../HTML/olvidocontra.html" className="recuperar">
                 <h5>¿Olvidaste tu contraseña?</h5>
             </a>

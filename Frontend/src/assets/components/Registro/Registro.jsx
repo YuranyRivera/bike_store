@@ -15,8 +15,8 @@ function Registro() {
                 <form action="" className="formulario">
                     <h2 className="clas">Registro</h2>
 
-                    <input type="text" placeholder="Nombres" />
-                    <input type="text" placeholder="Apellidos" />
+                    <input className='monda' type="text" placeholder="Nombres" />
+                    <input className='monda' type="text" placeholder="Apellidos" />
 
                     <input type="text" placeholder="Correo electrónico" />
                     <input type="text" placeholder="Contraseña" />
