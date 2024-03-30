@@ -1,8 +1,9 @@
 import React from 'react';
 import "../Contactanos/Contactanos.css"
-
+const backendURL = "http://localhost:4000";
 
 function Contactanos() {
+    
     return (
         <div className="container">
     <div className="formulario">
@@ -10,7 +11,7 @@ function Contactanos() {
         <br />
         <p>Comunícala ya con nosotros o contacta con los correos oficiales de la página, ¡te responderemos!</p>
         <br />
-        <form action="enviar.php" method="post">
+        <form action={`${backendURL}/api/contacto`} method="post">
             <label htmlFor="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required />
 

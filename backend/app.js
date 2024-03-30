@@ -2,7 +2,7 @@
 const cors = require('cors'); //no salte error
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000; //asignacion puerto-libre.
+const PORT = 4000  //asignacion puerto-libre.
 
 // Middleware para manejar solicitudes JSON y de URL codificadas
 app.use(express.json());

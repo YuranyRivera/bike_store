@@ -11,6 +11,8 @@ import Contactanos from './assets/components/Contactanos/Contactanos.jsx'
 import FondoContac from './assets/components/FondoContac/FondoContac.jsx'
 import Local from './pages/local.jsx'
 import ModuloBici from './assets/components/ModuloBici/ModuloBici.jsx'
+import FormularioPago from './assets/components/FormularioPago/FormularioPago.jsx'
+import DetalleProduc from './assets/components/DetalleProduc/DetalleProduc.jsx'
 
 
 
@@ -19,7 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <>
   <React.StrictMode>
 
-  <Local/>
+  <FormularioPago/>
 
     
   </React.StrictMode>

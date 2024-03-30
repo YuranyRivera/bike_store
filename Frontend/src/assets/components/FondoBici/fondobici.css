@@ -22,7 +22,6 @@ body {
   transform: translate(-50%, -50%);
   color: rgb(255, 255, 255);
   font-size: 5vw;
-  /* Tamaño de fuente relativo al ancho del viewport */
   font-weight: bold;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);

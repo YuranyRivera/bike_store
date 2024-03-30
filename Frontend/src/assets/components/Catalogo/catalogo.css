@@ -112,12 +112,13 @@ body {
   
   .cuadro p,
   h2,
-  input {
+  .filt {
     margin: 10px;
   }
   
   .boton_filtro {
-    padding: 10px 20px;
+    
+    
   /* Ajusta el padding según sea necesario */
   width: 80px;
   margin: 20px;
