@@ -39,6 +39,7 @@
   }
   
   .input {
+    box-sizing: border-box;
     margin: 0%;
     padding: 5px 10px;
     /* Añade espaciado interno */

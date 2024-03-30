@@ -1,12 +1,12 @@
 import React from "react";
 import "../Footer/Footer.css";
-
+import logo from "../../img/logo.png";
 function Footer (){
     return(
       <div className="page-container">
       <footer id="fondo">
 
-        <img className="icoFooter" src="/IMG/logo.png" alt="" />
+      <img src= {logo}  className="icoFooter " alt="logo" />
         <div className="iconoContacto">
           <img src="/IMG/iconoCelularFooter.png" className="imgnone" alt="" />
           <a className="linkCorreo" href="">
