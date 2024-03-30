@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../Inicio/inicio.css';
-import '..//../img/logoredondeado.png';
 
 function Inicio() {
   const [email, setEmail] = useState('');
@@ -16,12 +15,30 @@ function Inicio() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length === 0) {
-      // Aquí puedes enviar el formulario o realizar cualquier acción adicional
-      console.log('Formulario válido, enviar datos:', { email, password });
+      try {
+        const response = await fetch('http://localhost:3001/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),
+        });
+        const data = await response.json();
+        if (response.ok) {
+          console.log(data.message);
+          // Aquí puedes realizar acciones adicionales después de iniciar sesión
+        } else {
+          console.error(data.message);
+          setErrors({ serverError: data.message });
+        }
+      } catch (error) {
+        console.error('Error de conexión:', error.message);
+        setErrors({ serverError: 'Error de conexión' });
+      }
     } else {
       setErrors(validationErrors);
     }
