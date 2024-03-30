@@ -11,16 +11,12 @@
 body {
     background-image: url(../../img/inicio.png);
     background-repeat: no-repeat;
-    /**  background-position: 50px 25px;
-    background-position: 20% 10%;
-    background-position: left top;
-    background-position: left center;**/
     background-position: center center;
     height: 100vh;
     background-size: cover;
 }
 
-main{
+main {
     position: absolute;
     top: 0;
     left: 0;
@@ -28,6 +24,7 @@ main{
     height: 100%;
     background-color: #00000080; /* Color de fondo con transparencia */
 }
+
 h2 {
     margin: 1rem 0 2rem 0;
     text-align: center;
@@ -36,36 +33,52 @@ h2 {
 label {
     padding-left: 16px;
     opacity: 0.75;
+    color: black;
 }
 
-.monda {
+.campo {
     display: flex;
-    border-radius: 50px;
-    border-style: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
     outline: none;
-    margin-top: 35px;
-    padding: 15px;
+    margin-top: 25px;
+    padding: 12px 15px;
     width: 250px;
     background-color: #eaeeed;
+    color: #333;
+    font-size: 16px;
     box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
 }
 
-input:focus {
-    opacity: 0.7;
+.campo:not(:placeholder-shown) {
+    background-color: #fff; /* Cambiar a blanco cuando hay un valor ingresado */
 }
 
-button {
-    padding: 12px 48px;
-    border-radius: 50px;
-    color: white;
-    margin-top: 35px;
-    cursor: pointer;
-    outline: none;
-    border-width: 0;
-    background-color: #0038fe;
-    font-weight: 600;
-    width: 100%;
-    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
+@media (max-width: 648px) {
+    .campo,
+    button {
+        width: 100%;
+    }
+
+    .formulario {
+        max-width: 100%;
+        width: 270px;
+        padding: 20px;
+        left: 10%; /* Ajuste del valor de left */
+    }
+
+    .campo {
+        max-width: 100%;
+        width: 270px;
+        margin-top: 25px;
+    }
+
+    .ordenar2 {
+        max-width: 100%;
+        width: 270%;
+        font-size: 15px;
+        margin-left: 6%;
+    }
 }
 
 .forma {
@@ -73,10 +86,8 @@ button {
     flex-direction: column;
 }
 
-
 .columna {
     height: 100vh;
- 
     width: 300px;
     display: flex;
     justify-content: space-around;
@@ -102,14 +113,11 @@ button {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    width: 300px;
-    /* Ancho fijo */
-    height: auto;
-    /* Altura adaptable al contenido */
+    width: 300px; /* Ancho fijo */
+    height: auto; /* Altura adaptable al contenido */
     background-color: white;
     border-radius: 20px;
-    position: fixed;
-    /* Cambiar de posición absoluta a fija */
+    position: fixed; /* Cambiar de posición absoluta a fija */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -151,13 +159,11 @@ button {
     align-items: center;
     padding-right: 86%;
     margin-top: 20px;
-
 }
-
 
 #popo {
     width: 120px;
-    margin: 5px
+    margin: 5px;
 }
 
 #condiciones {
@@ -169,38 +175,13 @@ button {
     display: flex;
     align-items: flex-end;
     height: 40px;
-
 }
 
-.terminos{
+.terminos {
     margin-left: 10px;
+    color: black;
 }
 
-@media (max-width:648px){
-    .columna{
-        display: none;
-    }
-
-    .formulario {
-        max-width: 100%;
-        width: 270px;
-        padding: 20px;
-
-    }
-
-    .monda {
-        max-width: 100%;
-        width: 270px;
-        margin-top: 25px;
-        
-    }
-
-    .ordenar2 {
-        max-width: 100%;
-        width: 270%;
-        font-size: 15px;
-        margin-left: 6%;
-    }
-
-
+.no-acount {
+    color: black;
 }

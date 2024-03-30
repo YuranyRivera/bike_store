@@ -8,6 +8,6 @@ import Registro from './assets/components/Registro/Registro.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Inicio/>
+    <Registro/>
   </React.StrictMode>,
 )
