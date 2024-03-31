@@ -1,5 +1,5 @@
 import './App.css'
-import Catalogo from './assets/components/Catalogo'
+import OlvidoContra from './assets/components/olvidocontra/olvidocontra'
 
 
 function App() {
@@ -8,7 +8,9 @@ function App() {
   return (
     <>
       <div>
-        <Navbar/>
+        <OlvidoContra/>
+        <Codigo/>
+        <CambioContra/>
 
    
       </div>

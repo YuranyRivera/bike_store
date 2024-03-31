@@ -1,13 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import Catalogo from './assets/components/Catalogo.jsx'
-import Navbar from './assets/components/Navbar.jsx'
-
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx'; // Asegúrate de importar la App si es necesaria
+import './index.css';
+import OlvidoContra from './assets/components/olvidocontra/olvidocontra.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Navbar/>
-  </React.StrictMode>,
-)
+    <OlvidoContra />
+    <Codigo/>
+  </React.StrictMode>
+);
