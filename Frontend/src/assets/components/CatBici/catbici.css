@@ -1,0 +1,110 @@
+.tituloprincipal {
+    color: black;
+    margin-bottom: 30px;
+    margin-right: 35%;
+    margin-left: 10%;
+    font-size: 30px;
+    display: flex;
+    display: inline-block;
+  }
+  
+  .article {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+  }
+  
+  .galery {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+ 
+
+
+  .box-galery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    height: 320px;
+ 
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    
+  }
+  .box-galery:hover {
+    transform: scale(1.05); /* Aumentar el tamaño al pasar el mouse */
+    box-shadow: 0px 10px 10px rgba(117, 193, 255, 0.74); /* Cambiar la sombra al pasar el mouse */
+  }
+  .box-img {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .box-img1 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .a {
+    max-width: 100%;
+  
+    padding: 5px;
+    max-height: 100%;
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor */
+  }
+  .b {
+    margin-top: 10px;
+    font-size: 19px;
+    padding: 9px;
+  }
+  
+  .c {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 3px
+  }
+  
+  .btn-img {
+    box-sizing: border-box;
+    /* Estilos específicos de la clase boton_catalago */
+    padding: 7px 35px;
+  
+    font-size: 14px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+   
+  }
+  .btn-img:hover {
+    /* Estilos específicos de la clase boton_catalago al pasar el mouse */
+    background-color: #0056b3;
+  }
+  .box {
+    background-color: black;
+  }
+  
+  .imagen {
+    width: 100%;
+  }
+  
+  .containerBtn {
+    height: auto;
+    width: auto;
+    justify-content: space-around;
+  }
+  

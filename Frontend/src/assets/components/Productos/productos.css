@@ -14,11 +14,13 @@
   }
   
   .galery1 {
+    margin-top: 5%;
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
+
   
   .box-img {
     margin-bottom: 10%;
@@ -27,11 +29,13 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .bici {
-    width: 13em;
-    height: 13em;
+    width: 15em;
+    height: 16em;
   }
+
+  
   
   .frase {
     position: absolute;
@@ -43,7 +47,7 @@
     width: 13em;
     display: flex;
     flex-wrap: wrap;
-    font-size: 15px;
+    font-size: 17px;
   }
   
   .frase1 {
@@ -52,7 +56,7 @@
     color: rgb(255, 255, 255);
     border-radius: 5px;
     width: 13em;
-    font-size: 15px;
+    font-size: 17px;
     display: flex;
     flex-wrap: wrap;
   }
@@ -61,9 +65,18 @@
     position: absolute;
     background-color: blue;
     text-decoration: none;
-    padding: 0.5em 3em;
     color: aliceblue;
     font-size: 1em;
-    margin-top: 7em;
-    border-radius: 0.5em;
+    margin-top: 8em;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+   
+  }
+  .btn-imgs:hover {
+    /* Estilos específicos de la clase boton_catalago al pasar el mouse */
+    background-color: #0056b3;
   }

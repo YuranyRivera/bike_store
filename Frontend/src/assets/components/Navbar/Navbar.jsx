@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logoBike from '../../img/logobikestore.png';
 import carrito from '../../img/carrito.png';
@@ -16,7 +17,9 @@ function Navbar() {
     <main>
       <section className="contenido">
         <header className="header">
-          <img src={logoBike} alt="Logo" className="logo" />
+        <Link to="/">
+        <img src={logoBike} alt="Logo" className="logo" />
+         </Link>
           <div className="container">
             <div className="btn">
               <input className='input' type="text" placeholder="Buscar" />
@@ -41,12 +44,11 @@ function Navbar() {
             <i className="bi bi-x"></i>
           </button>
           <ul className="nav-list">
-            <li><a href="#">HOME</a></li>
-            <li><a href="/HTML/bicicletas.html">BICICLETAS</a></li>
-            <li><a href="/HTML/accesorio.html">ACCESORIOS</a></li>
-            <li><a href="/HTML/vestuario.html">VESTUARIO</a></li>
-            <li><a href="#">DESCUENTO</a></li>
-            <li><a href="/HTML/contactanos.html">CONTACTANOS</a></li>
+            <li><Link to="/">HOME</Link></li> {/* 2. Reemplaza <a> por <Link> */}
+            <li><Link to="/bicicletas">BICICLETAS</Link></li> {/* Enlace a BICICLETAS */}
+            <li><Link to="/accesorio">ACCESORIOS</Link></li>
+            <li><Link to="/vestuario">VESTUARIO</Link></li>
+           
           </ul>
         </nav>
       </header>
