@@ -1,8 +1,10 @@
 import './App.css'
+
 import Contactanos from './assets/components/Contactanos/Contactanos'
 import DetalleProduc from './assets/components/DetalleProduc/DetalleProduc'
 import FormularioPago from './assets/components/FormularioPago/FormularioPago'
 import ModuloBici from './assets/components/ModuloBici/ModuloBici'
+
 
 
 
@@ -12,6 +14,7 @@ function App() {
   return (
     <>
       <div>
+
  
 
         <Contactanos/>
@@ -20,6 +23,7 @@ function App() {
         <FormularioPago/>
         <DetalleProduc/>
         
+
 
 
       </div>
