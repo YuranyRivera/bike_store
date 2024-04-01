@@ -1,6 +1,6 @@
 import React from 'react';
 import "../olvidocontra/olvidocontra.css";
-import img from "../../IMG/logoredondeado.png";
+import img from "../../img/logoredondeado.png";
 
 function OlvidoContra() {
     return (
