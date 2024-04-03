@@ -9,11 +9,11 @@ export const Home = () => {
 
     return (
       <>
-    <Navbar/>
+     <Navbar/>
     <FondoHome/>
     <Productos/>
     <CatBici />
-    <Footer />
+    <Footer/>
 
       </>
     );

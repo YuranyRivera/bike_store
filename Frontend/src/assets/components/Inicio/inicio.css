@@ -8,16 +8,20 @@
     text-decoration: none;
 }
 
-body {
+.containerr1 {
     background-image: url(../../img/inicio.png);
-    background-repeat: no-repeat;
-    /**  background-position: 50px 25px;
-    background-position: 20% 10%;
-    background-position: left top;
-    background-position: left center;**/
-    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    padding: 0 80px;
+
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-attachment: fixed;
     background-size: cover;
+    margin: 0;
+    padding: 0;
 }
 
  main {

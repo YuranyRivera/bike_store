@@ -5,11 +5,11 @@ const backendURL = "http://localhost:4000";
 function Contactanos() {
     
     return (
-        <div className="container">
-    <div className="formulario">
-        <h1>¿Tienes alguna inquietud?</h1>
+        <div className="container1">
+    <div className="formulario1">
+        <h1 className='pal'>¿Tienes alguna inquietud?</h1>
         <br />
-        <p>Comunícala ya con nosotros o contacta con los correos oficiales de la página, ¡te responderemos!</p>
+        <p className='palab'>Comunícala ya con nosotros o contacta con los correos oficiales de la página, ¡te responderemos!</p>
         <br />
         <form action={`${backendURL}/api/contacto`} method="post">
             <label htmlFor="nombre">Nombre:</label>

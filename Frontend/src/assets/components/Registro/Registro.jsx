@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../Registro/registro.css';
-
+import logoRedondo from '../../img/logoredondeado.png';
+import { Link } from 'react-router-dom';
 function Registro() {
   const [nombres, setNombres] = useState('');
   const [apellidos, setApellidos] = useState('');
@@ -84,8 +85,9 @@ function Registro() {
 
   return (
     <main>
+      <div className="containerr1">
       <aside className="columna">
-        <img className="imgrd" src="../IMG/logoredondeado.png" alt="" />
+        <img src={logoRedondo} className="imgrd"  alt="" />
         <div className="forma">
           <h5 className="texto">Pedaleamos para servirle</h5>
         </div>
@@ -152,15 +154,16 @@ function Registro() {
           {errors.aceptarTerminos && <span className="error">{errors.aceptarTerminos}</span>}
 
           <div className="btn">
-            <button type="submit">Registrarse</button>
+            <button className='Registrar' type="submit">Registrarse</button>
           </div>
           <div className="bottom-form">
             <div className="no-acount">¿Ya tienes cuenta?</div>
-            <a href="../HTML/inicio.html" className="signup">
-              Iniciar sesión
-            </a>
+            <Link to ="/Inicio" className="signup">
+              Iniciar sesión</Link>
+           
           </div>
         </form>
+      </div>
       </div>
     </main>
   );

@@ -6,9 +6,9 @@ import CatBici from "../assets/components/CatBici/CatBici.jsx";
 export const Prueba = () => {
   return (
     <>
-     <Navbar/>
+
   <CatBici/>
-    <Footer/>
+  
     
     
     </>

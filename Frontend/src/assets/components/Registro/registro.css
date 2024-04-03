@@ -8,12 +8,20 @@
     text-decoration: none;
 }
 
-body {
+.containerr1 {
     background-image: url(../../img/inicio.png);
-    background-repeat: no-repeat;
-    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    padding: 0 80px;
+
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-attachment: fixed;
     background-size: cover;
+    margin: 0;
+    padding: 0;
 }
 
 main {
@@ -34,6 +42,20 @@ label {
     padding-left: 16px;
     opacity: 0.75;
     color: black;
+}
+
+.Registrar{
+    padding: 12px 48px;
+    border-radius: 50px;
+    color: white;
+    margin-top: 35px;
+    cursor: pointer;
+    outline: none;
+    border-width: 0;
+    background-color: #0038fe;
+    font-weight: 600;
+    /* width: 50%; */
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
 }
 
 .campo {
@@ -173,7 +195,7 @@ label {
 
 .ordenar2 {
     display: flex;
-    align-items: flex-end;
+   
     height: 40px;
 }
 
