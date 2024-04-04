@@ -1,0 +1,51 @@
+.containerCerrar {
+    width: 100%;
+    align-items: self-end;
+   justify-content: end;
+    display: flex;
+   flex-direction: column;
+  
+  }
+  
+  .lista{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+  }
+  
+  
+  
+  .igmPerfil {
+    width: 100px;
+    height: 90px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  
+  .nada{
+    
+    color: black;
+    
+    
+  }
+   
+  .hide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    
+    width: 100px;
+    height: 50px;
+    background-color:white;
+   display: none; 
+   border: groove black;
+  }
+  
+  
+  .show {
+  
+    display: block;
+  
+  }

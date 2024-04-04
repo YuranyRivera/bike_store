@@ -1,5 +1,5 @@
 import './App.css'
-import Catalogo from './assets/components/Catalogo'
+import CerrarSesion from './assets/components/CerrarSesion/CerrarSesion'
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <div>
-        <Navbar/>
+        <CerrarSesion/>
 
    
       </div>
