@@ -39,11 +39,15 @@ h2 {
 }
 
 label {
-    padding-left: 16px;
+    padding-left: 1px;
     opacity: 0.75;
     color: black;
 }
 
+#aceptarTerminos{
+    margin-top: 10px;
+    margin-left: 1em;
+}
 .Registrar{
     padding: 12px 48px;
     border-radius: 50px;
@@ -91,8 +95,9 @@ label {
 
     .campo {
         max-width: 100%;
-        width: 270px;
-        margin-top: 25px;
+    width: 270px;
+    margin-top: 25px;
+
     }
 
     .ordenar2 {

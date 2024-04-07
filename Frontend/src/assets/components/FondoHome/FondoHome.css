@@ -56,13 +56,7 @@
     /* Reducción del margen vertical */
   }
 
-  input[type="text"] {
-    margin-left: 10%;
-    align-items: flex-start;
-    width: calc(30% - 40px);
-    /* Reducción del ancho del campo de búsqueda */
-  }
-
+  
   .caja {
     position: absolute;
     display: flex;
