@@ -1,6 +1,8 @@
 import React from 'react';
+
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { Home } from "./home.jsx";
+import { Prueba } from "./prueba.jsx";
 import {Accesorio} from "./accesorio.jsx"; 
 import {Vestuario} from "./vestuario.jsx"; 
 import {Info} from "./info.jsx"; 
@@ -27,6 +29,7 @@ function App() {
           <Route path = "/info" element = {<Info/>}/>
           <Route path = "/Inicio" element = {<Inicio/>}/>
           <Route path = "/Registro" element = {<Registro/>}/>
+          <Route path = "/prueba" element = {<Prueba/>}/>
           <Route path="/" element={<Home />} />
         </Routes>
       </>

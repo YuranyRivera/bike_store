@@ -5,32 +5,25 @@ const datacontroler = require ('../controllers/datacontroler');
 
 const { insertarDatosFormulario } = require('../controllers/datacontroler');
 
+router.post('/usuarios', async (req, res) => {
+    const { nombre, apellido, correo, contraseña } = req.body; // Suponiendo que los datos se envían en el cuerpo de la solicitud
 
-
-router.get('/clientes', async (req, res) => {
     try {
-        console.log('Recibida solicitud para obtener todos los clientes...'); //solicitar
-        const users = await datacontroler.getAllUsers();
-        console.log('clientes enviados:', users);
-        res.json(users);
+        const nuevoUsuario = await datacontroler.registrousu (nombre, apellido, correo, contraseña);
+        if (nuevoUsuario) {
+            res.status(201).json({ mensaje: 'Usuario creado correctamente', usuario: nuevoUsuario });
+        } else {
+            res.status(500).json({ mensaje: 'Error al crear usuario' });
+        }
     } catch (error) {
-        console.error('Error al obtener clientes:', error);
-        res.status(500).json({ error: 'Error al obtener clientes' });
+        console.error('Error al crear usuario:', error);
+        res.status(500).json({ mensaje: 'Error interno del servidor' });
     }
 });
 
-router.post('/clientes', async (req, res) => {
-    const { nombre,correo, contraseña } = req.body;
-    try {
-        console.log('Recibida solicitud para agregar un nuevo clientes:', req.body);
-        const newUser = await datacontroler.insertUser(nombre, correo, contraseña); //agregar
-        console.log('clientes insertado:', newUser);
-        res.status(201).json(newUser);
-    } catch (error) {
-        console.error('Error al agregar clientes:', error);
-        res.status(500).json({ error: 'Error al agregar clientes' });
-    }
-});
+
+
+
 
 
 
