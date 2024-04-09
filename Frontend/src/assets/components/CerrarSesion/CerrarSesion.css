@@ -7,11 +7,27 @@
   
   }
   
-  .lista{
+  .iten{
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 5px;
+  }
+  .iten1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    color: black;
+    text-decoration: none;
+  }
+  .iten2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
   }
   
   
@@ -22,25 +38,37 @@
     border-radius: 50px;
     cursor: pointer;
   }
-  
-  .nada{
-    
-    color: black;
-    
+  .igmPer{
+    width: 100px;
+    height: 90px;
+    border-radius: 50px;
+
+  }
+
+  .imgSalir{
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
     
   }
+  .CerrarColor{
+    color: black;
+  }
+ 
    
   .hide {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    flex-direction: column;
     
-    width: 100px;
-    height: 50px;
+    width: 140px;
+    height: 180px;
     background-color:white;
    display: none; 
-   border: groove black;
+ 
+   border-radius: 20px;
   }
   
   
