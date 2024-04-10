@@ -47,7 +47,6 @@ router.post('/procesar-pago-contraentrega', async (req, res) => {
 });
 
 
-
 // Ruta para procesar el formulario de contacto
 router.post('/contacto', async (req, res) => {
     const { nombre, email, mensaje } = req.body;
@@ -62,4 +61,64 @@ router.post('/contacto', async (req, res) => {
     }
 });
 
+router.get('/products', async (req, res) => {
+    try {
+        console.log('Recibida solicitud para obtener todos los productos...',req.body);
+        const products = await datacontroler.getAllProducts();
+        console.log('Productos enviados:', products);
+        res.json(products);
+    } catch (error) {
+        console.error('Error al obtener productos:', error);
+        res.status(500).json({ error: 'Error al obtener productos' });
+    }
+});
+
+router.get('/vestuario_hombre', async (req, res) => {
+    try {
+        console.log('Recibida solicitud para obtener productos de la categoría "vestuario_hombre"...');
+        const products = await datacontroler.getProductsByCategory('vestuario_hombre');
+        console.log('Productos de la categoría "vestuario_hombre" enviados:', products);
+        res.json(products);
+    } catch (error) {
+        console.error('Error al obtener productos de la categoría "vestuario_hombre":', error);
+        res.status(500).json({ error: 'Error al obtener productos de la categoría "vestuario_hombre"' });
+    }
+});
+
+router.get('/Bicicletas', async (req, res) => {
+    try {
+        console.log('Recibida solicitud para obtener todos los productos...',req.body);
+        const products = await datacontroler.getProductsBicicleta();
+        console.log('Productos enviados:', products);
+        res.json(products);
+    } catch (error) {
+        console.error('Error al obtener productos:', error);
+        res.status(500).json({ error: 'Error al obtener productos' });
+    }
+});
+
+router.get('/Accesorios', async (req, res) => {
+    try {
+        console.log('Recibida solicitud para obtener todos los productos...',req.body);
+        const products = await datacontroler.getProductsAccesorios();
+        console.log('Productos enviados:', products);
+        res.json(products);
+    } catch (error) {
+        console.error('Error al obtener productos:', error);
+        res.status(500).json({ error: 'Error al obtener productos' });
+    }
+});
+
+router.get('/productos/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        console.log(`Recibida solicitud para obtener producto con ID ${id}`);
+        const product = await datacontroler.getProductById(id);
+        console.log('Producto enviado:', product);
+        res.json(product);
+    } catch (error) {
+        console.error(`Error al obtener producto con ID ${id}:`, error);
+        res.status(500).json({ error: `Error al obtener producto con ID ${id}` });
+    }
+});
 module.exports = router;

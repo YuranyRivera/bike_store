@@ -1,31 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import Catalogo from './assets/components/Catalogo/Catalogo.jsx'
-import Filtro from './assets/components/Filtro/Filtro.jsx'
-import FondoBici from './assets/components/FondoBici/FondoBici.jsx'
-import Footer from './assets/components/Footer/Footer.jsx'
-import FondoAccesorio from './assets/components/FondoAccesorio/FondoAccesorio.jsx'
-import Contactanos from './assets/components/Contactanos/Contactanos.jsx'
-import FondoContac from './assets/components/FondoContac/FondoContac.jsx'
-import Local from './pages/local.jsx'
-import ModuloBici from './assets/components/ModuloBici/ModuloBici.jsx'
-import FormularioPago from './assets/components/FormularioPago/FormularioPago.jsx'
-import DetalleProduc from './assets/components/DetalleProduc/DetalleProduc.jsx'
+
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { createRoot } from 'react-dom/client'; // Importa createRoot
+
+import App from './pages/app.jsx';
+const root = document.getElementById('root');
+
+// Usar createRoot en lugar de render
+createRoot(root).render(
+  <BrowserRouter>
+
+      <App />
+   
+  </BrowserRouter>
+);
 
 
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <>
-  <React.StrictMode>
-
-  <FormularioPago/>
-
-    
-  </React.StrictMode>
-
-  
-  </>
-)

@@ -1,30 +1,44 @@
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
-.page-container {
-  display: flex;
-  flex-direction: column;
-  
-}
 
+
+
+
+
+/*footer*/
 #fondo {
+  padding: 20px;
   width: 100%;
+  height: 100%;
   background-color: black;
   color: white;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-start;
-  bottom: 0;
-  z-index: 1000;
-  padding: 10px;
- 
+  position: static;
 }
 
-/* Estilos específicos para el contenido del footer */
-.txtinfoSitio, .txAyuda, .txtContactanos {
+.increCarrito {
+  margin: 2% 2%;
+  display: flex;
+  justify-content: center;
+  /* Centrar horizontalmente los botones */
+  align-items: center;
+}
+
+.txtinfoSitio {
+  flex-direction: column;
+}
+
+.txAyuda {
+  flex-direction: column;
+}
+
+.txtContactanos {
   flex-direction: column;
 }
 
@@ -38,31 +52,15 @@
   height: 40px;
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
-.linkCorreo, .linkNosotros {
+.linkCorreo {
   color: white;
-  text-decoration: none;
 }
-@media only screen and (max-width: 768px) {
-  #fondo {
-      flex-direction: column;
-      /* Cambia a disposición de columna en pantallas pequeñas */
-      align-items: center;
-      /* Centra los elementos en pantallas pequeñas */
-      text-align: center;
-      /* Alinea el texto al centro en pantallas pequeñas */
-  }
 
-  .txtinfoSitio,
-  .txtAyuda,
-  .txtContactanos {
-      margin-bottom: 20px;
-      /* Añade espacio entre las columnas */
-  }
+.linkNosotros {
+  color: white;
 }
 
 .copyright {
@@ -70,8 +68,63 @@
   color: white;
   width: 100%;
   height: 20px;
-
   justify-content: center;
   display: flex;
   align-items: center;
+}
+
+/*footer*/
+
+@media only screen and (max-width: 768px) {
+  
+
+  #fondo {
+    width: 100%;
+    flex-direction: column;
+    /* Cambia a disposición de columna en pantallas pequeñas */
+    align-items: center;
+    /* Centra los elementos en pantallas pequeñas */
+    text-align: center;
+    /* Alinea el texto al centro en pantallas pequeñas */
+    height: 100%;
+    margin: 0;
+  }
+
+  .continer2,
+  .container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .txtinfoSitio {
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+
+  .txtAyuda {
+    margin-bottom: 20px;
+  }
+
+  .txtContactanos {
+    margin-bottom: 20px;
+    /* Añade espacio entre las columnas */
+  }
+
+  .imgF {
+    display: none;
+  }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .frame2 {
+    flex-direction: column;
+  }
 }

@@ -1,16 +1,18 @@
-// backend/app.js
-const cors = require('cors'); //no salte error
 const express = require('express');
 const app = express();
-const PORT = 4000  //asignacion puerto-libre.
+const cors = require('cors');
+const PORT = 4000;
 
 // Middleware para manejar solicitudes JSON y de URL codificadas
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));//leer rutas
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-// Rutas de la API
+
+// Importar y usar las rutas de la API
 const dataRoutes = require('./routes/dataroutes');
-app.use('/api', dataRoutes); // Prefijo de ruta para las rutas de datos
+app.use('/api', dataRoutes);
+
+// Otras configuraciones y rutas pueden ir aquí
 
 // Manejo de errores
 app.use((err, req, res, next) => {

@@ -1,12 +1,19 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 import "../Footer/Footer.css"
 import logoBike from "../../img/logobikestore.png"
+
 
 function Footer (){
     return(
       <div className="page-container">
       <footer id="fondo">
-        <img className="icoFooter" src= {logoBike} alt="logo" />
+
+      <Link to="/">
+        <img src={logoBike} alt="Logo" className="logo" />
+         </Link>
+
         <div className="iconoContacto">
           <img src="/IMG/iconoCelularFooter.png" className="imgnone" alt="" />
           <a className="linkCorreo" href="">
@@ -60,7 +67,9 @@ function Footer (){
           <p className="p1">Responsabilidad Social</p>
         </div>
       </footer>
+
       </div>
+
     );
 }
 

@@ -47,12 +47,10 @@
     margin: 0 5px;
   }
   
-  .catalogo {
-    width: calc(54vw - 0px);
-    /* Ajustar el ancho del catálogo según sea necesario */
-  }
+
 
   .filtro-input {
+    box-sizing: border-box;
     width: 50px;
     margin: 10px;
     height: 10px;
@@ -65,7 +63,7 @@
 
   @media (max-width: 400px) {
     .cuadro {
-      width: 150%;
+    
       margin: 10px;
     }
     .catalogo {
@@ -82,3 +80,4 @@
       font-size: 14px;
     }
   }
+

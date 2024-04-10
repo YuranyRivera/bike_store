@@ -1,0 +1,82 @@
+.cajagrande {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .box-galery1 {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 7px;
+  }
+  
+  .galery1 {
+    margin-top: 5%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  
+  .box-img {
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bici {
+    width: 15em;
+    height: 16em;
+  }
+
+  
+  
+  .frase {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.699);
+  
+    color: rgb(252, 252, 252);
+    display: flex;
+    border-radius: 5px;
+    width: 13em;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 17px;
+  }
+  
+  .frase1 {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.699);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    width: 13em;
+    font-size: 17px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .btn-imgs {
+    position: absolute;
+    background-color: blue;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 1em;
+    margin-top: 8em;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+   
+  }
+  .btn-imgs:hover {
+    /* Estilos específicos de la clase boton_catalago al pasar el mouse */
+    background-color: #0056b3;
+  }

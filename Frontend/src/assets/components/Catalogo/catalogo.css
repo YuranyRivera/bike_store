@@ -21,18 +21,17 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 50%;
-    margin: auto;
+
+    
     
   }
     
     
     .bicicleta {
-      width: 230px;
-      height: 340px;
-      max-width: 100%;
+  
+
+    margin: 1%;
       max-height: 100%;
-      margin: 20px;
       padding: 15px;
       border-radius: 10px;
       text-align: center;
@@ -69,6 +68,7 @@ body {
     }
     
     .boton_catalago {
+      box-sizing: border-box;
       /* Estilos específicos de la clase boton_catalago */
       padding: 7px 20px;
       width: 57%;
@@ -80,7 +80,7 @@ body {
       cursor: pointer;
       transition: background-color 0.3s ease;
       align-self: center;
-      margin: 3px;
+      margin-left: 45px;
     }
     
     .boton_catalago:hover {
@@ -89,6 +89,7 @@ body {
     }
   
   .cuadro {
+    
     float: left; /* Hace que el cuadro flote a la izquierda */
     width: 200px;
     margin: 20px; /* Margen alrededor del cuadro */
@@ -117,8 +118,9 @@ body {
   }
   
   .boton_filtro {
-    
-    
+
+    box-sizing: border-box;
+    padding: 10px 20px;
   /* Ajusta el padding según sea necesario */
   width: 80px;
   margin: 20px;

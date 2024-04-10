@@ -1,4 +1,5 @@
 body {
+
   margin: 0;
   padding: 0;
   background-size: contain; /* Ajusta la imagen de fondo para que quepa dentro del contenedor */
@@ -28,3 +29,4 @@ body {
   height: 30vw;
   max-height: 100%;
 }
+

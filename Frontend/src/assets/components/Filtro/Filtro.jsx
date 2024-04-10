@@ -86,6 +86,7 @@ function Filtro() {
           </div>
   
           <div className="boton_filtro" onClick={() => filtrar()}>Filtrar</div>
+
         </div>
       </div>
     );
