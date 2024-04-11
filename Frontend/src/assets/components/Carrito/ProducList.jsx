@@ -1,6 +1,3 @@
-// ProductList.js
-import React from 'react';
-
 const ProductList = ({ productList, onAddProduct }) => {
   return (
     <div className="container-items">
@@ -22,5 +19,3 @@ const ProductList = ({ productList, onAddProduct }) => {
     </div>
   );
 };
-
-export default ProductList;

@@ -6,20 +6,43 @@ import { Info } from "./info.jsx";
 import { Bicicletas } from "./bicicletas.jsx"; 
 import Ctropa from "../assets/components/CtRopa/Ctropa.jsx"; // Cambio aquí
 import Descripcion from "../assets/components/Descripcion/Descripcion.jsx";
+import Inicio from "../assets/components/Inicio/Inicio.jsx";
+import Contactanos from '../assets/components/Contactanos/Contactanos.jsx';
+import Registro from '../assets/components/Registro/Registro.jsx';
+
 function App() {
   const addToCart = (producto) => {
     // Aquí puedes implementar la lógica para agregar el producto al carrito
-    console.log("Producto agregado al carrito:", producto);
+    const data = {
+      idUser: 18,
+      idProduct: producto.id_articulo
+    }
+
+    const opciones = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }
+    fetch("http://localhost:4000/api/carrito", opciones)
+    .then(response=>{return response.json()})
+    .then(data=>console.log(data))
   };
+  
   return (
     <Routes>
+
       <Route path="/" element={<Home />} />
       <Route path="/bicicletas" element={<Bicicletas />} />
       <Route path="/accesorio" element={<Accesorio />} />
       <Route path="/vestuario" element={<Vestuario />} />
       <Route path="/info" element={<Info />} />
+      <Route path = "/Inicio" element = {<Inicio/>}/>
+      <Route path = "/Registro" element = {<Registro/>}/>
       <Route path="/Ctropa" element={<Ctropa />} /> {/* Cambio aquí */}
       <Route path="/producto/:id_articulo" element={<Descripcion addToCart={addToCart} />} />
+      <Route></Route>
     </Routes>
   );
 }

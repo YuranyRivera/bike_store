@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import '../Inicio/inicio.css';
+import logoRedondo from '../../img/logoredondeado.png';
+import { Link } from 'react-router-dom';
 
 function Inicio() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
+  const [serverError, setServerError] = useState('');
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -20,7 +24,7 @@ function Inicio() {
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length === 0) {
       try {
-        const response = await fetch('http://localhost:3001/login', {
+        const response = await fetch('http://localhost:4000/api/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -30,14 +34,14 @@ function Inicio() {
         const data = await response.json();
         if (response.ok) {
           console.log(data.message);
-          // Aquí puedes realizar acciones adicionales después de iniciar sesión
+          setServerError('Inicio de sesión exitoso');
         } else {
           console.error(data.message);
-          setErrors({ serverError: data.message });
+          setServerError('Por favor, verifica tu correo electrónico y contraseña e intenta nuevamente.');
         }
       } catch (error) {
         console.error('Error de conexión:', error.message);
-        setErrors({ serverError: 'Error de conexión' });
+        setServerError('Error de conexión');
       }
     } else {
       setErrors(validationErrors);
@@ -60,15 +64,14 @@ function Inicio() {
   };
 
   const isValidEmail = (email) => {
-    // Expresión regular para validar el formato del correo electrónico
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
   };
 
   return (
-    <main>
+    <div className="containerr1">
       <aside className="columna">
-        <img className="imgrd" src="../IMG/logoredondeado.png" alt="" />
+        <img src={logoRedondo} className="imgrd" alt="" />
         <div className="forma">
           <h5 className="texto">Pedaleamos para servirle</h5>
         </div>
@@ -77,6 +80,7 @@ function Inicio() {
       <div className="upper-form">
         <form onSubmit={handleSubmit} className="formulario">
           <h2>Iniciar sesión</h2>
+          {serverError && <span className="error">{serverError}</span>}
           <input
             className={`monda ${errors.email ? 'error-field' : ''}`}
             type="text"
@@ -87,7 +91,7 @@ function Inicio() {
           />
           {errors.email && <span className="error">{errors.email}</span>}
           <input
-            className='monda'
+            className={`monda ${errors.password ? 'error-field' : ''}`}
             type="password"
             name="password"
             value={password}
@@ -99,15 +103,19 @@ function Inicio() {
             <h5>¿Olvidaste tu contraseña?</h5>
           </a>
           <div className="btn">
+            
+            <Link to ="/" className="signup">
             <button type="submit">Iniciar sesión</button>
+            </Link>
+            
           </div>
           <div className="bottom-form">
             <div className="no-acount">¿No tienes cuenta?</div>
-            <a href="../HTML/registro.html" className="signup">Registrarse</a>
+            <a href="/Registro" className="signup">Registrarse</a>
           </div>
         </form>
       </div>
-    </main>
+    </div>
   );
 }
 

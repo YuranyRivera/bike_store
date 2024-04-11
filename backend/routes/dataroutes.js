@@ -7,7 +7,7 @@ const { insertarDatosFormulario } = require('../controllers/datacontroler');
 
 
 
-router.get('/clientes', async (req, res) => {
+router.get('/registro', async (req, res) => {
     try {
         console.log('Recibida solicitud para obtener todos los clientes...'); //solicitar
         const users = await datacontroler.getAllUsers();
@@ -19,19 +19,36 @@ router.get('/clientes', async (req, res) => {
     }
 });
 
-router.post('/clientes', async (req, res) => {
-    const { nombre,correo, contraseña } = req.body;
+router.post('/registro', async (req, res) => {
+    const { nombre, correo, contraseña, id_rol } = req.body; // Aquí recibimos id_rol del cuerpo de la solicitud
     try {
-        console.log('Recibida solicitud para agregar un nuevo clientes:', req.body);
-        const newUser = await datacontroler.insertUser(nombre, correo, contraseña); //agregar
-        console.log('clientes insertado:', newUser);
+        console.log('Recibida solicitud para agregar un nuevo cliente:', req.body);
+        const newUser = await datacontroler.insertUser(nombre, correo, contraseña, id_rol); // Pasamos id_rol al insertar el usuario
+        console.log('Cliente insertado:', newUser);
         res.status(201).json(newUser);
     } catch (error) {
-        console.error('Error al agregar clientes:', error);
-        res.status(500).json({ error: 'Error al agregar clientes' });
+        console.error('Error al agregar cliente:', error);
+        res.status(500).json({ error: 'Error al agregar cliente' });
     }
 });
 
+
+
+// Ruta para iniciar sesión
+router.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const result = await datacontroler.loginUser(email, password);
+        if (result.success) {
+            res.status(200).json({ message: result.message });
+        } else {
+            res.status(401).json({ message: result.message });
+        }
+    } catch (error) {
+        console.error('Error al iniciar sesión:', error);
+        res.status(500).json({ error: 'Error interno del servidor' });
+    }
+});
 
 
 // Maneja la solicitud POST del formulario contraentrega
@@ -45,6 +62,7 @@ router.post('/procesar-pago-contraentrega', async (req, res) => {
         res.status(500).send('Error interno del servidor');
     }
 });
+
 
 
 // Ruta para procesar el formulario de contacto
@@ -121,4 +139,15 @@ router.get('/productos/:id', async (req, res) => {
         res.status(500).json({ error: `Error al obtener producto con ID ${id}` });
     }
 });
+
+router.post('/carrito', async(req, res)=>{
+    const {idUser, idProduct} = req.body;
+    try{
+        const carrito = await datacontroler.addProductCarrito(idUser, idProduct)
+        res.json(carrito);
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
 module.exports = router;

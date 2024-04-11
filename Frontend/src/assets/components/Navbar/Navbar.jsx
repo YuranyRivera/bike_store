@@ -1,4 +1,3 @@
-// Navbar.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
@@ -21,9 +20,8 @@ function Navbar() {
     };
 
     const addToCart = (producto) => {
-        setCarritoItems([...carritoItems, producto]);
-    };
-
+        setCarritoItems([...carritoItems, { ...producto, quantity: 1 }]);
+      };
     return (
         <>
             <section className="contenido">

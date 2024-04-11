@@ -5,7 +5,7 @@ import "../Descripcion/descripcion.css";
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 
-function Descripcion({ addToCart }) {
+function Descripcion({ productList, addToCart }) {
     const { id_articulo } = useParams();
     const [producto, setProducto] = useState(null);
 
@@ -53,6 +53,10 @@ function Descripcion({ addToCart }) {
                     
                     <button className="boton" type="button" onClick={handleAddToCart}>AÑADIR AL CARRITO</button>
                 </div>
+                <div className="descripcion-container">
+      <h2>Productos Relacionados</h2>
+
+    </div>
             </div>
             <div className="textos">
                 <h2>Descripción</h2>

@@ -4,7 +4,7 @@ async function getAllUsers() {
     try {
         console.log('Obteniendo todos los clientes...');
         const client = await pool.connect();
-        const result = await client.query('SELECT * FROM clientes');
+        const result = await client.query('SELECT * FROM usuarios');
         client.release();
         console.log('clientes obtenidos con éxito:', result.rows);
         return result.rows;
@@ -14,18 +14,40 @@ async function getAllUsers() {
     }
 }
 
-async function insertUser(nombre, correo, contraseña) {
+async function insertUser(nombre, correo, contraseña, id_rol) {
     try {
         console.log('Insertando nuevo cliente...');
         const client = await pool.connect();
-        const queryText = 'INSERT INTO clientes (nombre, correo, contraseña) VALUES ($1, $2, $3) RETURNING *';
-        const values = [nombre, correo, contraseña];
+        const queryText = 'INSERT INTO usuarios (nombre, correo, contraseña, id_rol) VALUES  ($1, $2, $3, $4) RETURNING *';
+        const values = [nombre, correo, contraseña, id_rol];
         const result = await client.query(queryText, values);
         client.release();
         console.log('Usuario insertado con éxito:', result.rows[0]);
         return result.rows[0]; // Devuelve el usuario insertado
     } catch (error) {
         console.error('Error al insertar cliente:', error);
+        throw error;
+    }
+}
+
+async function loginUser(email, password) {
+    try {
+        console.log('Intentando iniciar sesión para el usuario con correo:', email);
+        const client = await pool.connect();
+        const queryText = 'SELECT * FROM usuarios WHERE correo = $1 AND contraseña = $2';
+        const values = [email, password];
+        const result = await client.query(queryText, values);
+        client.release();
+
+        if (result.rows.length > 0) {
+            console.log('Inicio de sesión exitoso para el usuario con correo:', email);
+            return { success: true, message: 'Inicio de sesión exitoso' };
+        } else {
+            console.log('Correo o contraseña incorrectos:', email);
+            return { success: false, message: 'Correo o contraseña incorrectos' };
+        }
+    } catch (error) {
+        console.error('Error al iniciar sesión:', error);
         throw error;
     }
 }
@@ -133,5 +155,22 @@ async function getProductById(id) {
         throw error;
     }
 }
+async function addProductCarrito(idUser, idProduct){
+    try{
+        const client = await pool.connect();
+        await client.query('BEGIN');
+        const insertQuery = 'INSERT INTO carrito(user_id, product_id) VALUES($1, $2)';
+        await client.query(insertQuery, [idUser, idProduct]);
+        const queryCarrito = 'SELECT p.* FROM articulos p INNER JOIN carrito c ON p.id_articulo = c.product_id WHERE c.user_id = $1'
+        const resultCarrito = await client.query(queryCarrito,[idUser])
+        await client.query('COMMIT');
+        client.release();
+        return resultCarrito.rows
+    }
+    catch(error){
+        console.error('Error al obtener producto por ID:', error);
+        throw error;
+    }
+}
 
-module.exports = { getAllUsers, insertUser, insertarDatosFormulario, insertarContacto, getAllProducts, getProductsByCategory, getProductsBicicleta, getProductsAccesorios, getProductById};
+module.exports = {addProductCarrito, loginUser, getAllUsers, insertUser, insertarDatosFormulario, insertarContacto, getAllProducts, getProductsByCategory, getProductsBicicleta, getProductsAccesorios, getProductById};
