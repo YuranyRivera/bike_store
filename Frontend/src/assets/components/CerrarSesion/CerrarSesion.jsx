@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import '../CerrarSesion/CerrarSesion.css'
 import img from "../../../IMG/iconusuario.png"
-import Img from "../../../IMG/ico_perfil_n.png"
+import Img from "../../../IMG/ico_.png"
 import IMG from "../../../IMG/ico_cerrar.png"
 
 
