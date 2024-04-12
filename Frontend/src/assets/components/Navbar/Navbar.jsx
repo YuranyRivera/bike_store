@@ -55,7 +55,7 @@ function Navbar() {
                         <i className="bi bi-x"></i>
                     </button>
                     <ul className="nav-list">
-                        <li><Link to="/prueba">HOME</Link></li>
+                        <li><Link to="/">HOME</Link></li>
                         <li><Link to="/bicicletas">BICICLETAS</Link></li>
                         <li><Link to="/accesorio">ACCESORIOS</Link></li>
                         <li><Link to="/vestuario">VESTUARIO</Link></li>

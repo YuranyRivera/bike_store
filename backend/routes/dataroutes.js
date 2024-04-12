@@ -39,11 +39,7 @@ router.post('/login', async (req, res) => {
     const { email, password } = req.body;
     try {
         const result = await datacontroler.loginUser(email, password);
-        if (result.success) {
-            res.status(200).json({ message: result.message });
-        } else {
-            res.status(401).json({ message: result.message });
-        }
+       res.status(200).json(result)
     } catch (error) {
         console.error('Error al iniciar sesión:', error);
         res.status(500).json({ error: 'Error interno del servidor' });

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import '../Inicio/inicio.css';
 import logoRedondo from '../../img/logoredondeado.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Inicio() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState('');
-  
+  const navigate = useNavigate()
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,6 +32,7 @@ function Inicio() {
           body: JSON.stringify({ email, password }),
         });
         const data = await response.json();
+        console.log(data)
         if (response.ok) {
           console.log(data.message);
           setServerError('Inicio de sesión exitoso');
@@ -46,6 +47,7 @@ function Inicio() {
     } else {
       setErrors(validationErrors);
     }
+    navigate('/')
   };
 
   const validateForm = () => {
@@ -104,9 +106,8 @@ function Inicio() {
           </a>
           <div className="btn">
             
-            <Link to ="/" className="signup">
-            <button type="submit">Iniciar sesión</button>
-            </Link>
+          <button type="submit">Iniciar sesión</button>
+            
             
           </div>
           <div className="bottom-form">

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../Catalogo/catalogo.css';
 
-function Catalogo() {
+function Catalogo({ productosFiltrados }) {
         const [productos, setProductos] = useState([]);
       
         useEffect(() => {

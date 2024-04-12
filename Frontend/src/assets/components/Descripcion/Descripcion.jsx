@@ -42,9 +42,9 @@ function Descripcion({ productList, addToCart }) {
                 <img className="imagen" src={`src/assets/img/BIKE_STORE/${producto.categoria_descripcion}/${producto.imagen}/Bici1.png`} alt={producto.nombre} />
                 <div className="info">
                     <h2 className="titulo">{producto.nombre}</h2>
-                    <h2 className="precio">${producto.costo}</h2>
-                    <h2 className="M">Cantidad Disponible:{producto.stock}</h2>
-                    <h2 className="M">Marca:{producto.marca}</h2>
+                    <p className="precio">${producto.costo}</p>
+                    <p className="M">Cantidad Disponible:{producto.stock}</p>
+                    <p className="M">Marca:{producto.marca}</p>
                     <div className="cart">
                         <button type="button" className="button button-qty" data-quantity="minus">-</button>
                         <input className="number" type="number" value="1" min="1" max="999" />
@@ -53,17 +53,14 @@ function Descripcion({ productList, addToCart }) {
                     
                     <button className="boton" type="button" onClick={handleAddToCart}>AÑADIR AL CARRITO</button>
                 </div>
-                <div className="descripcion-container">
-      <h2>Productos Relacionados</h2>
-
-    </div>
+             
             </div>
             <div className="textos">
-                <h2>Descripción</h2>
+                <p className='Descripcion'> Descripción</p>
                 <p className="descripcion">{producto.articulo_descripcion}</p>
 
-                <h2>Especificaciones</h2>
-                <li className="especificacion">{producto.especificaciones}</li>
+                <p className='Descripcion'> Especificaciones</p>
+                <li className="descripcion">{producto.especificaciones}</li>
             </div>
             <Footer/>
         </>
