@@ -1,20 +1,19 @@
-import './App.css'
-import CerrarSesion from './assets/components/CerrarSesion/CerrarSesion'
-
+import React, { useState } from 'react';
+import './App.css';
+import CerrarSesion from './assets/components/CerrarSesion/CerrarSesion';
+import Cookies from './assets/components/Cookies/Cookies';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
       <div>
-        <CerrarSesion/>
-
-   
+        <CerrarSesion />
+        <Cookies/>
       </div>
-     
     </>
-  )
+  );
 }
 
-export default App
+export default App;
