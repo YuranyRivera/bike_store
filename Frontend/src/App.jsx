@@ -1,7 +1,11 @@
 import './App.css'
-import Catalogo from './assets/components/Catalogo'
-import Inicio from './assets/components/Inicio/Inicio'
-import Registro from './assets/components/Registro/Registro'
+
+import Contactanos from './assets/components/Contactanos/Contactanos'
+import DetalleProduc from './assets/components/DetalleProduc/DetalleProduc'
+import FormularioPago from './assets/components/FormularioPago/FormularioPago'
+import ModuloBici from './assets/components/ModuloBici/ModuloBici'
+
+
 
 
 function App() {
@@ -10,11 +14,18 @@ function App() {
   return (
     <>
       <div>
-        <Navbar/>
-        <Inicio/>
-        <Registro/>
 
-   
+ 
+
+        <Contactanos/>
+       
+        <ModuloBici/>
+        <FormularioPago/>
+        <DetalleProduc/>
+        
+
+
+
       </div>
      
     </>

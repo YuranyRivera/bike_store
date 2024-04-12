@@ -1,0 +1,13 @@
+.paginaPrincipal {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+    margin-left: 15%;
+    margin-right: 10%;
+    
+  }
+  
+  .filtro {
+    width: 10px; /* Ancho del filtro */
+    margin-right: 20px; /* Espacio entre el filtro y el catálogo */
+  }

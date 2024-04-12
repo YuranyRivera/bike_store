@@ -1,0 +1,59 @@
+/*.fondo {
+    background-image: url(../../img/fondopago.jpg);
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}*/
+.formu {
+    max-width: 400px;
+    margin: 160px auto; /* Cambia 'auto' a '0' para centrar horizontalmente */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3)
+}
+
+.formu h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.texto {
+    display: block;
+    font-weight: bold;
+}
+
+.mensaje[type="text"],
+.mensaje[type="tel"],
+.mensaje[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn_Pedido {
+    display: block;
+    margin: 0 auto; 
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn_Pedido:hover {
+    background-color: #0056b3;
+}
