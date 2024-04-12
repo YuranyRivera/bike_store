@@ -165,5 +165,18 @@ async function addProductCarrito(idUser, idProduct){
         throw error;
     }
 }
+async function getProductCarrito(idUser){
+    try{
+        const client = await pool.connect();
+        const queryCarrito = 'SELECT p.* FROM articulos p INNER JOIN carrito c ON p.id_articulo = c.product_id WHERE c.user_id = $1'
+        const resultCarrito = await client.query(queryCarrito,[idUser])
+        client.release();
+        return resultCarrito.rows
+    }
+    catch(error){
+        console.error('Error al obtener producto por ID:', error);
+        throw error;
+    }
+}
 
-module.exports = {addProductCarrito, loginUser, getAllUsers, insertUser, insertarDatosFormulario, insertarContacto, getAllProducts, getProductsByCategory, getProductsBicicleta, getProductsAccesorios, getProductById};
+module.exports = {addProductCarrito, getProductCarrito, loginUser, getAllUsers, insertUser, insertarDatosFormulario, insertarContacto, getAllProducts, getProductsByCategory, getProductsBicicleta, getProductsAccesorios, getProductById};

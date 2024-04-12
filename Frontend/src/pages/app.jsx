@@ -9,12 +9,13 @@ import Descripcion from "../assets/components/Descripcion/Descripcion.jsx";
 import Inicio from "../assets/components/Inicio/Inicio.jsx";
 import Contactanos from '../assets/components/Contactanos/Contactanos.jsx';
 import Registro from '../assets/components/Registro/Registro.jsx';
-
+import { useState } from 'react';
 function App() {
+  const [idUser, setIdUser] = useState(null)
   const addToCart = (producto) => {
     // Aquí puedes implementar la lógica para agregar el producto al carrito
     const data = {
-      idUser: 18,
+      idUser: idUser,
       idProduct: producto.id_articulo
     }
 
@@ -38,7 +39,7 @@ function App() {
       <Route path="/accesorio" element={<Accesorio />} />
       <Route path="/vestuario" element={<Vestuario />} />
       <Route path="/info" element={<Info />} />
-      <Route path = "/Inicio" element = {<Inicio/>}/>
+      <Route path = "/Inicio" element = {<Inicio setIdUser={setIdUser}/>}/>
       <Route path = "/Registro" element = {<Registro/>}/>
       <Route path="/Ctropa" element={<Ctropa />} /> {/* Cambio aquí */}
       <Route path="/producto/:id_articulo" element={<Descripcion addToCart={addToCart} />} />

@@ -3,17 +3,27 @@ import React from 'react';
 import '../Carrito/carrito.css'; 
 
 const Carrito = ({ allProducts, onDeleteProduct, total, onCleanCart }) => {
+  const [products, setProducts] = useState([])
+
+  let id = localStorage.getItem('userID')
+  id = parseInt(id, 10)
+  useEffect(()=>{
+    fetch("http://localhost:4000/api/carrito/"+id)
+    .then((response)=>{return response.json()})
+    .then(data=>setProducts(data))
+  },[])
+
   return (
     <div className="container-cart-products">
-      {allProducts && allProducts.length > 0 ? ( // Verificación de allProducts
+      {products && products.length > 0 ? ( // Verificación de allProducts
         <div className="carrito-items">
-          {allProducts.map(product => (
-            <div className="carrito-item" key={product.id}>
-              <img src={product.img} alt={product.nameProduct} />
+          {products.map((product,id) => (
+            <div className="carrito-item" key={id}>
+              <img src={product.img} alt={product.nombre} />
               <div className="carrito-item-info">
-                <h3>{product.nameProduct}</h3>
-                <p>Cantidad: {product.quantity}</p>
-                <p>Precio: ${product.price}</p>
+                <h3>{product.nombre}</h3>
+                <p>Cantidad: {product.cantidad}</p>
+                <p>Precio: ${product.costo}</p>
                 <button onClick={() => onDeleteProduct(product)}>Eliminar</button>
               </div>
             </div>

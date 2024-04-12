@@ -146,4 +146,15 @@ router.post('/carrito', async(req, res)=>{
         res.status(500).json({message: error.message})
     }
 })
+
+router.get('/carrito/:idUser', async(req, res)=>{
+    const {idUser} = req.params;
+    try{
+        const carrito = await datacontroler.getProductCarrito(idUser)
+        res.status(200).json(carrito)
+    }
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
 module.exports = router;
