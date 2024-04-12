@@ -1,6 +1,7 @@
 import React from 'react';
-
-import '../Carrito/carrito.css'; 
+import { useState, useEffect } from 'react';
+import '../Carrito/carrito.css';
+ 
 
 const Carrito = ({ allProducts, onDeleteProduct, total, onCleanCart }) => {
   const [products, setProducts] = useState([])

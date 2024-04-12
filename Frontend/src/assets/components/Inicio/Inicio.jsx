@@ -3,7 +3,7 @@ import '../Inicio/inicio.css';
 import logoRedondo from '../../img/logoredondeado.png';
 import { Link, useNavigate } from 'react-router-dom';
 
-function Inicio() {
+function Inicio({setIdUser}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
@@ -32,6 +32,7 @@ function Inicio() {
           body: JSON.stringify({ email, password }),
         });
         const data = await response.json();
+        setIdUser(data)
         console.log(data)
         if (response.ok) {
           console.log(data.message);
