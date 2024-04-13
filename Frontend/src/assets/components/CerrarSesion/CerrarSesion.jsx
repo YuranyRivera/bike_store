@@ -9,6 +9,8 @@ function MenuDesplegable() {
   useEffect(() => {
     let cerrar_btn = document.getElementById('hideText_btn');
     let items = document.getElementById('hideText');
+   
+
 
     const toggleText = () => {
       items.classList.toggle('show');

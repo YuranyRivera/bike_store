@@ -1,0 +1,37 @@
+
+.contBuscador{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+   
+ 
+}
+.buscar-button{
+    width: 70px;
+    height: 20px;
+    background: blue;
+    border-radius: 10px;
+    color: white;
+}
+.buscar{
+    width: 300px;
+    height: 200px;
+
+}
+#results{
+    list-style-type: none;
+    
+}
+.results{
+    
+    display: flex;
+    align-items:baseline ;
+    flex-direction: column;
+    cursor:  pointer;
+}
+
+.buscar-input{
+    background-color: aliceblue;
+    width: 500px;
+}
+
