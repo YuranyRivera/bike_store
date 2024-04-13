@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../Inicio/inicio.css';
-import logoRedondo from '../../img/logoredondeado.png';
-import { Link } from 'react-router-dom';
+
 function Inicio() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -67,10 +66,9 @@ function Inicio() {
   };
 
   return (
-   
-      <div className="containerr1">
+    <main>
       <aside className="columna">
-      <img src={logoRedondo} className="imgrd"  alt="" />
+        <img className="imgrd" src="../IMG/logoredondeado.png" alt="" />
         <div className="forma">
           <h5 className="texto">Pedaleamos para servirle</h5>
         </div>
@@ -101,18 +99,15 @@ function Inicio() {
             <h5>¿Olvidaste tu contraseña?</h5>
           </a>
           <div className="btn">
-          <Link to="/">
             <button type="submit">Iniciar sesión</button>
-            </Link>
           </div>
           <div className="bottom-form">
             <div className="no-acount">¿No tienes cuenta?</div>
-            <Link to ="/Registro" className="signup">Registrarse</Link>
+            <a href="../HTML/registro.html" className="signup">Registrarse</a>
           </div>
         </form>
       </div>
-      </div>
-   
+    </main>
   );
 }
 

@@ -12,7 +12,6 @@ function CambiarContraseña() {
         <link rel="stylesheet" href="../CSS/cambiocontra.css" />
         <link rel="icon" href="/IMG/logoredondeado.png" />
       </head>
-      <body>
         <main className="main">
           <aside className="columna">
           <img src= {img} className="imgrd" />
@@ -33,7 +32,6 @@ function CambiarContraseña() {
             </form>
           </div>
         </main>
-      </body>
     </html>
   );
 }

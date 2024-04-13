@@ -39,7 +39,7 @@ function IngresaCodigo() {
                 <link rel="stylesheet" href="../CSS/codigo.css" />
                 <link rel="icon" href="../IMG/logoredondeado.png" />
             </head>
-            <body>
+            
                 <main className="main">
                     <aside className="columna">
                     <img src= {img} className="imgrd" />
@@ -65,7 +65,7 @@ function IngresaCodigo() {
                         </form>
                     </div>
                 </main>
-            </body>
+            
         </html>
     );
 }

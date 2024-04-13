@@ -14,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <>
+    <main>
       <section className="contenido">
         <header className="header">
         <Link to="/">
@@ -26,12 +26,12 @@ function Navbar() {
               <i className="fa fa-search"></i>
             </div>
           </div>
-          <Link to="/carrito"> {/* Utiliza Link en lugar de a para navegar a la página del carrito */}
+          <a href="/HTML/carrito.html">
             <img src={carrito} alt="carrito" className="logo1" />
-          </Link>
-          <Link to="/Registro"> {/* Utiliza Link en lugar de a para navegar a la página de usuario */}
+          </a>
+          <a href="">
             <img src={usuario} alt="usuario" className="logo1" />
-          </Link>
+          </a>
         </header>
       </section>
 
@@ -48,12 +48,11 @@ function Navbar() {
             <li><Link to="/bicicletas">BICICLETAS</Link></li> {/* Enlace a BICICLETAS */}
             <li><Link to="/accesorio">ACCESORIOS</Link></li>
             <li><Link to="/vestuario">VESTUARIO</Link></li>
-            <li><Link to="/Contactanos">CONTACTANOS</Link></li>
            
           </ul>
         </nav>
       </header>
-      </>
+    </main>
   );
 }
 

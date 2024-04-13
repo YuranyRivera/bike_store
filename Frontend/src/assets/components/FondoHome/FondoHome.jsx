@@ -5,7 +5,7 @@ import Home from "../../img/homeprincipal.png";
 
 function FondoHome(){
     return (
-      <body>
+      <>
           <section className="banner">
             <div className="caja">
              <p className="title">BIKE STORE</p>
@@ -13,7 +13,7 @@ function FondoHome(){
             </div>
             <img src= {Home} className="img_banner"  />
             </section>
-        </body>
+        </>
   
       );
   }

@@ -6,9 +6,9 @@ import Footer from '../assets/components/Footer/Footer.jsx';
 export const Info = () => {
   return (
     <>
-    
+     <Navbar/>
     <Descripcion/>
-  
+    <Footer/>
     
     
     </>

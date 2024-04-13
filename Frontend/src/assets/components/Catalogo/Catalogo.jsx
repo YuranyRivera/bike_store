@@ -1,126 +1,48 @@
-import React from 'react';
-import "../Catalogo/catalogo.css"
-import bici_1 from "../../img/bici_1.png"
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import '../Catalogo/catalogo.css';
+
 function Catalogo() {
+        const [productos, setProductos] = useState([]);
+      
+        useEffect(() => {
+          async function fetchProductos() {
+            try {
+              const response = await fetch('http://localhost:4000/api/Bicicletas');
+              if (!response.ok) {
+                throw new Error('Error al obtener productos');
+              }
+              const data = await response.json();
+              console.log(data);
+              setProductos(data.slice(0,58));
+            } catch (error) {
+              console.error(error);
+            }
+          }
+      
+          fetchProductos();
+        }, []);
+      
+
     return (
-        <body>
+        <div>
+          <section className="article">
+            <h2 className="tituloprincipal">PRODUCTOS DESTACADOS</h2>
             
-        <div className="catalogo">
-            <div className="bicicleta" data-categoria="Bicicletas De Ruta" data-marca="BMC" data-precio="400">
-                <img src=  {bici_1} alt="Bicicleta 1" />
-                <h2>Bicicleta de Ruta</h2>
-                <p> $400</p>
-                <Link to="/info">
-                <div className="boton_catalago">Comprar</div>
-                </Link>
+            <div className="galery">
+              {productos.map(producto => (
+                <div className="box-galery" key={producto.id_articulo}>
+                  <div className="box-img1">
+                    <img className="a" src={`src/assets/img/BIKE_STORE/${producto.categoria_descripcion}/${producto.imagen}/Bici1.png`} alt={producto.nombre} />
+                  </div>
+                  <h2 className="b">{producto.nombre}</h2>
+                  <p className="c">${producto.costo}</p>
+                  <Link to={`/producto/${producto.id_articulo}`} className="btn-img">Comprar</Link>
+                </div>
+              ))}
             </div>
-
-            <div className="bicicleta" data-categoria="Bicicletas De Montaña" data-marca="BMC" data-precio="400">
-                <img src=  {bici_1} alt="Bicicleta 2" />
-                <h2>Bicicleta de Montaña</h2>
-                <p> $400</p>
-                <Link to="/info">
-                <div className="boton_catalago">Comprar</div>
-                </Link>
-            </div>
-
-            <div className="bicicleta">
-                <img src=  {bici_1} alt="Bicicleta 2" />
-                <h2>Bicicleta de Carretera</h2>
-                <p> $400</p>
-                <Link to="/info">
-                <div className="boton_catalago">Comprar</div>
-                </Link>
-            </div>
-
-            <div className="bicicleta">
-                <img src=  {bici_1} alt="Bicicleta 2" />
-                <h2>Bicicleta de Carretera</h2>
-                <p> $400</p>
-                <Link to="/info">
-                <div className="boton_catalago">Comprar</div>
-                </Link>
-            </div>
-
-            <div className="bicicleta">
-                <img src=  {bici_1} alt="Bicicleta 2" />
-                <h2>Bicicleta de Carretera</h2>
-                <p> $400</p>
-                <Link to="/info">
-                <div className="boton_catalago">Comprar</div>
-                </Link>
-            </div>
-
-            <div className="bicicleta">
-                <img src=  {bici_1} alt="Bicicleta 2" />
-                <h2>Bicicleta de Carretera</h2>
-                <p> $400</p>
-                <Link to="/info">
-                <div className="boton_catalago">Comprar</div>
-                </Link>
-            </div>
-            
-            <div className="bicicleta">
-                <img src=  {bici_1} alt="Bicicleta 2" />
-                <h2>Bicicleta de Carretera</h2>
-                <p> $400</p>
-                <Link to="/info">
-                <div className="boton_catalago">Comprar</div>
-                </Link>
-            </div>
-
-            <div className="bicicleta" data-categoria="Bicicletas De Ruta" data-marca="BMC" data-precio="400">
-                <img src=  {bici_1} alt="Bicicleta 1" />
-                <h2>Bicicleta de Ruta</h2>
-                <p> $400</p>
-                <Link to="/info">
-                <div className="boton_catalago">Comprar</div>
-                </Link>
-            </div>
-
-            <div className="bicicleta" data-categoria="Bicicletas De Montaña" data-marca="BMC" data-precio="400">
-                <img src=  {bici_1} alt="Bicicleta 2" />
-                <h2>Bicicleta de Montaña</h2>
-                <p> $400</p>
-                <Link to="/info">
-                <div className="boton_catalago">Comprar</div>
-                </Link>
-            </div>
-
-            <div className="bicicleta">
-                <img src=  {bici_1} alt="Bicicleta 2" />
-                <h2>Bicicleta de Carretera</h2>
-                <p> $400</p>
-                <Link to="/info">
-                <div className="boton_catalago">Comprar</div>
-                </Link>
-            </div>
-
-            <div className="bicicleta">
-                <img src=  {bici_1} alt="Bicicleta 2" />
-                <h2>Bicicleta de Carretera</h2>
-                <p> $400</p>
-                <Link to="/info">
-                <div className="boton_catalago">Comprar</div>
-                </Link>
-            </div>
-
-            <div className="bicicleta">
-                <img src=  {bici_1} alt="Bicicleta 2" />
-                <h2>Bicicleta de Carretera</h2>
-                <p> $400</p>
-                <Link to="/info">
-                <div className="boton_catalago">Comprar</div>
-                </Link>
-            </div>
-
-        
-
+          </section>
         </div>
-        </body>
-
-    );
-}
-
+      );
+    }
 export default Catalogo;

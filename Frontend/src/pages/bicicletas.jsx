@@ -6,7 +6,7 @@ import ModuloBici from '../assets/components/ModuloBici/ModuloBici.jsx';
 export const Bicicletas = () => {
   return (
     <>
-     <Navbar/>
+    <Navbar/>
     <FondoBici/>
     <ModuloBici/>
     <Footer/>
