@@ -38,7 +38,13 @@ async function loginUser(email, password) {
         const values = [email, password];
         const result = await client.query(queryText, values);
         client.release();
-        return result.rows[0];
+        if (result.rows.length > 0) {
+            console.log('Inicio de sesión exitoso para el usuario con correo:', email);
+            return { success: true, message: 'Inicio de sesión exitoso', user:result.rows[0] };
+        } else {
+            console.log('Correo o contraseña incorrectos:', email);
+            return { success: false, message: 'Correo o contraseña incorrectos' };
+        }
     } catch (error) {
         console.error('Error al iniciar sesión:', error);
         throw error;

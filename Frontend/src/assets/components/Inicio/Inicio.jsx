@@ -32,12 +32,15 @@ function Inicio({ setIdUser }) {
           body: JSON.stringify({ email, password }),
         });
         const data = await response.json();
-        setIdUser(data.id_usuario);
-        localStorage.setItem('userID',data.id_usuario.toString())
+        
         console.log(data);
         if (response.ok) {
           console.log(data.message);
+          
           setServerError('Inicio de sesión exitoso');
+          setIdUser(data.user.id_usuario);
+          navigate('/');
+          localStorage.setItem('userID',data.user.id_usuario.toString())
         } else {
           console.error(data.message);
           setServerError(
@@ -51,7 +54,7 @@ function Inicio({ setIdUser }) {
     } else {
       setErrors(validationErrors);
     }
-    navigate('/');
+    
   };
 
   const validateForm = () => {
