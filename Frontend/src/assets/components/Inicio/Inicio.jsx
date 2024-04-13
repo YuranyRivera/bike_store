@@ -3,12 +3,12 @@ import '../Inicio/inicio.css';
 import logoRedondo from '../../img/logoredondeado.png';
 import { Link, useNavigate } from 'react-router-dom';
 
-function Inicio({setIdUser}) {
+function Inicio({ setIdUser }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
   const [serverError, setServerError] = useState('');
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,14 +32,17 @@ function Inicio({setIdUser}) {
           body: JSON.stringify({ email, password }),
         });
         const data = await response.json();
-        setIdUser(data)
-        console.log(data)
+        setIdUser(data.id_usuario);
+        localStorage.setItem('userID',data.id_usuario.toString())
+        console.log(data);
         if (response.ok) {
           console.log(data.message);
           setServerError('Inicio de sesión exitoso');
         } else {
           console.error(data.message);
-          setServerError('Por favor, verifica tu correo electrónico y contraseña e intenta nuevamente.');
+          setServerError(
+            'Por favor, verifica tu correo electrónico y contraseña e intenta nuevamente.'
+          );
         }
       } catch (error) {
         console.error('Error de conexión:', error.message);
@@ -48,7 +51,7 @@ function Inicio({setIdUser}) {
     } else {
       setErrors(validationErrors);
     }
-    navigate('/')
+    navigate('/');
   };
 
   const validateForm = () => {
@@ -102,18 +105,17 @@ function Inicio({setIdUser}) {
             onChange={handleInputChange}
           />
           {errors.password && <span className="error">{errors.password}</span>}
-          <a href="../HTML/olvidocontra.html" className="recuperar">
+          <Link to="../HTML/olvidocontra.html" className="recuperar">
             <h5>¿Olvidaste tu contraseña?</h5>
-          </a>
+          </Link>
           <div className="btn">
-            
-          <button type="submit">Iniciar sesión</button>
-            
-            
+            <button type="submit">Iniciar sesión</button>
           </div>
           <div className="bottom-form">
             <div className="no-acount">¿No tienes cuenta?</div>
-            <a href="/Registro" className="signup">Registrarse</a>
+            <Link to="/Registro" className="signup">
+              Registrarse
+            </Link>
           </div>
         </form>
       </div>
