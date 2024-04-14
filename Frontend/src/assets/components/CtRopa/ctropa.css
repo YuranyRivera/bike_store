@@ -115,11 +115,7 @@ body {
   }
   
   
-  .cuadro p,
-  h2,
-  input {
-    margin: 10px;
-  }
+  
   
   .boton_filtro {
     box-sizing: border-box;

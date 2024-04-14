@@ -39,7 +39,7 @@ function Inicio({ setIdUser }) {
           
           setServerError('Inicio de sesión exitoso');
           setIdUser(data.user.id_usuario);
-          navigate('/');
+          navigate('home');
           localStorage.setItem('userID',data.user.id_usuario.toString())
         } else {
           console.error(data.message);

@@ -1,4 +1,3 @@
-// Descripcion.js
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import "../Descripcion/descripcion.css";
@@ -8,6 +7,7 @@ import Footer from '../Footer/Footer';
 function Descripcion({ productList, addToCart }) {
     const { id_articulo } = useParams();
     const [producto, setProducto] = useState(null);
+    const [cantidades, setCantidades] = useState(1);
 
     useEffect(() => {
         async function fetchProducto() {
@@ -26,14 +26,39 @@ function Descripcion({ productList, addToCart }) {
         fetchProducto();
     }, [id_articulo]);
 
+    useEffect(() => {
+        if (producto) {
+            const img = new Image();
+            img.onload = () => {
+                console.log('La imagen se cargó correctamente.');
+            };
+            img.onerror = () => {
+                console.error('Error al cargar la imagen.');
+            };
+            img.src = `../../assets/img/BIKE_STORE/${producto.categoria_descripcion}/${producto.imagen}/Bici1.png`;
+        }
+    }, [producto]);
+
     if (!producto) {
         return <div>Cargando...</div>;
     }
 
     const handleAddToCart = () => {
-        addToCart(producto);
+        addToCart(producto, cantidades);
     };
-    
+
+    const handleQuantityChange = (action) => {
+        console.log(`Stock disponible: ${producto.stock}`);
+        console.log(`Cantidades actual: ${cantidades}`);
+        
+        if (action === 'minus' && cantidades > 1) {
+            setCantidades(cantidades - 1);
+        } else if (action === 'plus' && cantidades < producto.stock) {
+            setCantidades(cantidades + 1);
+        }
+
+        console.log(`Nueva cantidades: ${cantidades}`);
+    };
 
     return (
         <>
@@ -43,17 +68,16 @@ function Descripcion({ productList, addToCart }) {
                 <div className="info">
                     <h2 className="titulo">{producto.nombre}</h2>
                     <p className="precio">${producto.costo}</p>
-                    <p className="M">Cantidad Disponible:{producto.stock}</p>
-                    <p className="M">Marca:{producto.marca}</p>
+                    <p className="M">Cantidades Disponibles: {producto.stock}</p>
+                    <p className="M">Marca: {producto.marca}</p>
                     <div className="cart">
-                        <button type="button" className="button button-qty" data-quantity="minus">-</button>
-                        <input className="number" type="number" value="1" min="1" max="999" />
-                        <button type="button" className="button button-qty" data-quantity="plus">+</button>
+                        <button type="button" className="button button-qty" onClick={() => handleQuantityChange('minus')}>-</button>
+                        <input className="number" type="number" value={cantidades} min="1" max={producto.stock} readOnly />
+                        <button type="button" className="button button-qty" onClick={() => handleQuantityChange('plus')}>+</button>
                     </div>
                     
                     <button className="boton" type="button" onClick={handleAddToCart}>AÑADIR AL CARRITO</button>
                 </div>
-             
             </div>
             <div className="textos">
                 <p className='Descripcion'> Descripción</p>

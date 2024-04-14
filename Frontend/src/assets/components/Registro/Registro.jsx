@@ -150,7 +150,7 @@ function Registro() {
                 checked={aceptarTerminos}
                 onChange={handleInputChange}
               />
-              <label htmlFor="aceptarTerminos">Aceptar términos y condiciones</label>
+              <label className='terminos' htmlFor="aceptarTerminos">Aceptar términos y condiciones</label>
             </div>
             {errors.aceptarTerminos && <span className="error">{errors.aceptarTerminos}</span>}
 

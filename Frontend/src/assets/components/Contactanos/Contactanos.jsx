@@ -13,10 +13,10 @@ function Contactanos() {
         <br />
         <form action={`${backendURL}/api/contacto`} method="post">
             <label htmlFor="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required />
+            <input className='cont' type="text" id="nombre" name="nombre" required />
 
             <label htmlFor="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required />
+            <input className='cont' type="email" id="email" name="email" required />
 
             <label htmlFor="mensaje">Mensaje:</label>
             <textarea id="mensaje" name="mensaje" rows="4" required></textarea>

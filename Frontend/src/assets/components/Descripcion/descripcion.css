@@ -1,220 +1,220 @@
 .rectangulo {
-    margin-top: 10%;
-   margin-left: 10%;
+  margin-top: 10%;
+ margin-left: 10%;
+
+  display: flex; /* Utiliza flexbox para el diseño */
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: center;
+}
+
+.imagen{
+  width: 400px;
+  margin-right: 5%;
+}
+
+.boton {
+  margin-left: 8px;
+  cursor: pointer;
+  width: 300px;
+  margin-top: 10px;
+  background-color: #000000;
+  color: white;
+  border-radius: 5px;
+  height: 40px;
+}
+
+.textos{
+  margin: 40px;
+}
+.rectangulo .info {
+  margin-bottom: 19px;
+  white-space: nowrap; /* Evita el ajuste de línea */
+  margin-right: 10%;
+  display: flex;
+  flex-direction: column;
+}
+.cart {
+  margin-left: 8px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.titulo{
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.number {
+
+  font-size: 23px;
+    border-radius: 0%;
+    border: none;
+    margin-left: 10px;
+    width: 50px;
+    text-align: center;
+}
+
+.cart button {
+  border-radius: 4px;
+  font-size: 20px;
+  margin-right: 1px;
+  padding: 3px 9px;
+  background-color: #e6e6e6;
+
+  cursor: pointer;
+}
+
+.precio{
   
-    display: flex; /* Utiliza flexbox para el diseño */
-    align-items: center; /* Centra verticalmente los elementos */
-    justify-content: center;
+  font-size: 30px;
+  color: rgb(109, 192, 109);
+  font-weight: bold;
+}
+.M{
+  font-size: 20px;
+  font-weight: bold;
+}
+.textos{
+  font-size: 15px;
+  font-weight: bold;
+}
+.Descripcion{
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px;
+}
+.descripcion{
+  font-size: 15px;
+  font-weight: bold;
+  padding: 20px;
+}
+ul{
+  margin: 15px;
+}
+ol{
+  margin: 15px;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+
+ 
+ 
+  .titulo{
+    font-size: 15px;
+  margin-bottom: 1px;
   }
-  
   .imagen{
-    width: 400px;
-    margin-right: 5%;
+    width: 100px;
+    
   }
-  
+  .precio{
+
+    font-size: 15px;
+    color: rgb(109, 192, 109);
+  }
+
+  .bicicleta .info {
+    margin-top: 40px;
+   
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+   
+   
+  }
+
+  .M{
+    font-size: 10px;
+  }
   .boton {
-    margin-left: 8px;
-    cursor: pointer;
-    width: 300px;
-    margin-top: 10px;
+      cursor: pointer;
+    font-size: 10px;
+    width: 130px;
+    margin-top: 0px;
     background-color: #000000;
     color: white;
     border-radius: 5px;
     height: 40px;
   }
 
-  .textos{
-    margin: 40px;
+  .number {
+
+    font-size: 15px;
+    border-radius: 0%;
+    border: none;
+    margin-left:1px;
+    width: 6px;
+    text-align: center;
+}
+  
+.textos{
+  margin: 20px;
+}
+ 
+
+  .cart button {
+    margin-right: 10px;
+    padding: 2px 5px;
+    background-color: #e6e6e6;
+    cursor: pointer;
+  } 
+
+  #fondo {
+    width: 100%;
+    flex-direction: column;
+    /* Cambia a disposición de columna en pantallas pequeñas */
+    align-items: center;
+    /* Centra los elementos en pantallas pequeñas */
+    text-align: center;
+    /* Alinea el texto al centro en pantallas pequeñas */
+    height: 100%;
+    margin: 0;
   }
-  .rectangulo .info {
-    margin-bottom: 19px;
-    white-space: nowrap; /* Evita el ajuste de línea */
-    margin-right: 10%;
+
+  .continer2,
+  .container1 {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
   }
-  .cart {
-    margin-left: 8px;
-    margin-top: 15px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .titulo{
-    font-size: 30px;
+
+  .txtinfoSitio {
+    margin-top: 25px;
     margin-bottom: 20px;
   }
 
-  .number {
-  
-    font-size: 23px;
-      border-radius: 0%;
-      border: none;
-      margin-left: 10px;
-      width: 30px;
-      text-align: center;
-  }
-  
-  .cart button {
-    border-radius: 4px;
-    font-size: 20px;
-    margin-right: 1px;
-    padding: 3px 9px;
-    background-color: #e6e6e6;
-  
-    cursor: pointer;
-  }
-  
-  .precio{
-    
-    font-size: 30px;
-    color: rgb(109, 192, 109);
-    font-weight: bold;
-  }
-  .M{
-    font-size: 20px;
-    font-weight: bold;
-  }
-  .textos{
-    font-size: 15px;
-    font-weight: bold;
-  }
-  .Descripcion{
-    font-size: 25px;
-    font-weight: bold;
-    padding: 20px;
-  }
-  .descripcion{
-    font-size: 15px;
-    font-weight: bold;
-    padding: 20px;
-  }
-  ul{
-    margin: 15px;
-  }
-  ol{
-    margin: 15px;
+  .txtAyuda {
+    margin-bottom: 20px;
   }
 
-  
- 
-
-  @media only screen and (max-width: 768px) {
-
-   
-   
-    .titulo{
-      font-size: 15px;
-    margin-bottom: 1px;
-    }
-    .imagen{
-      width: 100px;
-      
-    }
-    .precio{
-  
-      font-size: 15px;
-      color: rgb(109, 192, 109);
-    }
-  
-    .bicicleta .info {
-      margin-top: 40px;
-     
-      margin-left: 30px;
-      display: flex;
-      flex-direction: column;
-     
-     
-    }
-
-    .M{
-      font-size: 10px;
-    }
-    .boton {
-        cursor: pointer;
-      font-size: 10px;
-      width: 130px;
-      margin-top: 0px;
-      background-color: #000000;
-      color: white;
-      border-radius: 5px;
-      height: 40px;
-    }
-  
-    .number {
-  
-      font-size: 15px;
-      border-radius: 0%;
-      border: none;
-      margin-left:1px;
-      width: 6px;
-      text-align: center;
+  .txtContactanos {
+    margin-bottom: 20px;
+    /* Añade espacio entre las columnas */
   }
-    
-  .textos{
-    margin: 20px;
-  }
-   
-  
-    .cart button {
-      margin-right: 10px;
-      padding: 2px 5px;
-      background-color: #e6e6e6;
-      cursor: pointer;
-    } 
 
-    #fondo {
-      width: 100%;
-      flex-direction: column;
-      /* Cambia a disposición de columna en pantallas pequeñas */
-      align-items: center;
-      /* Centra los elementos en pantallas pequeñas */
-      text-align: center;
-      /* Alinea el texto al centro en pantallas pequeñas */
-      height: 100%;
-      margin: 0;
-    }
-  
-    .continer2,
-    .container1 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-  
-    .txtinfoSitio {
-      margin-top: 25px;
-      margin-bottom: 20px;
-    }
-  
-    .txtAyuda {
-      margin-bottom: 20px;
-    }
-  
-    .txtContactanos {
-      margin-bottom: 20px;
-      /* Añade espacio entre las columnas */
-    }
-  
-    .imgF {
-      display: none;
-    }
-  
-    .copyright {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-  
-    .frame2 {
-      flex-direction: column;
-    }
-    .linkCorreo, .linkNosotros {
-      font-size: 10px;
-      color: white;
-      text-decoration: none;
+  .imgF {
+    display: none;
   }
-    }
+
+  .copyright {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .frame2 {
+    flex-direction: column;
+  }
+  .linkCorreo, .linkNosotros {
+    font-size: 10px;
+    color: white;
+    text-decoration: none;
+}
+  }

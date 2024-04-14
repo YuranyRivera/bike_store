@@ -147,8 +147,19 @@ async function getProductById(id) {
         FROM articulos INNER JOIN categorias ON articulos.id_categoria = categorias.id_categoria WHERE articulos.id_articulo = $1`;
         const result = await client.query(queryText, [id]);
         client.release();
+        
+        // Construir la URL completa de la imagen
+        const imagePath = `src/assets/img/BIKE_STORE/${result.rows[0].categoria_descripcion}/${result.rows[0].imagen}/Bici2.png`;
+        
         console.log('Producto obtenido por ID:', result.rows[0]);
-        return result.rows[0]; 
+        
+        // Agregar la ruta de la imagen a los datos del producto
+        const productWithImagePath = {
+            ...result.rows[0],
+            imagePath
+        };
+
+        return productWithImagePath; 
     } catch (error) {
         console.error('Error al obtener producto por ID:', error);
         throw error;
@@ -184,5 +195,39 @@ async function getProductCarrito(idUser){
         throw error;
     }
 }
+const procesarPagoContraEntrega = async (req, res) => {
+    const { monto, usuario_id } = req.body;
 
-module.exports = {addProductCarrito, getProductCarrito, loginUser, getAllUsers, insertUser, insertarDatosFormulario, insertarContacto, getAllProducts, getProductsByCategory, getProductsBicicleta, getProductsAccesorios, getProductById};
+    try {
+        if (!monto || !usuario_id) {
+            throw new Error('Monto y usuario_id son obligatorios');
+        }
+
+        const client = await pool.connect();
+        await client.query('BEGIN');
+
+        const queryVenta = `
+            INSERT INTO venta (fecha, valor_total, id_usuario)
+            VALUES (NOW(), $1, $2)
+            RETURNING id_venta
+        `;
+
+        const valuesVenta = [monto, usuario_id];
+        const resultVenta = await client.query(queryVenta, valuesVenta);
+
+        const idVenta = resultVenta.rows[0].id_venta;
+
+        await client.query('COMMIT');
+        client.release();
+
+        res.json({ success: true, id_venta: idVenta });
+    } catch (error) {
+        await client.query('ROLLBACK');
+        client.release();
+
+        console.error('Error al procesar el pago:', error.message);
+        res.status(500).json({ success: false, message: error.message });
+    }
+};
+
+module.exports = {procesarPagoContraEntrega, addProductCarrito, getProductCarrito, loginUser, getAllUsers, insertUser, insertarDatosFormulario, insertarContacto, getAllProducts, getProductsByCategory, getProductsBicicleta, getProductsAccesorios, getProductById};

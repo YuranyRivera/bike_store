@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../Carrito/carrito.css';
 
 const Carrito = ({ allProducts, onDeleteProduct, onCleanCart }) => {
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState(0);
+  const navigate = useNavigate(); // Obtener la función navigate
 
   let id = localStorage.getItem('userID');
   id = parseInt(id, 10);
@@ -13,11 +15,16 @@ const Carrito = ({ allProducts, onDeleteProduct, onCleanCart }) => {
       .then((response) => response.json())
       .then(data => {
         setProducts(data);
-       
+        // Calcular el total sumando los costos de todos los productos
         const totalCost = data.reduce((acc, product) => acc + parseFloat(product.costo), 0);
         setTotal(totalCost);
       });
   }, []);
+
+  const handleGoToPay = () => {
+    // Redirige al usuario al componente FormularioPago
+    navigate('/formulario_pago');
+  };
 
   return (
     <div className="container-cart-products">
@@ -43,6 +50,8 @@ const Carrito = ({ allProducts, onDeleteProduct, onCleanCart }) => {
           <h3>Total:</h3>
           <p>${total}</p>
         </div>
+        <button className="btn-go-to-pay" onClick={handleGoToPay}>Ir a pagar</button>
+       
       </div>
       <button className="btn-clear-all" onClick={onCleanCart}>Vaciar Carrito</button>
     </div>
