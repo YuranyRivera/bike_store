@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Carrito/carrito.css';
 
-const Carrito = ({ allProducts, onDeleteProduct, onCleanCart }) => {
+const Carrito = ({ allProducts, onCleanCart }) => {
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const navigate = useNavigate(); // Obtener la función navigate
@@ -21,6 +21,28 @@ const Carrito = ({ allProducts, onDeleteProduct, onCleanCart }) => {
       });
   }, []);
 
+  const handleDeleteProduct = (productToDelete) => {
+    // Realizar la solicitud DELETE al backend para eliminar el producto del carrito
+    fetch(`http://localhost:4000/api/carrito/${id}/${productToDelete.id_articulo}`, {
+      method: 'DELETE',
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        // Actualizar el estado local del carrito eliminando el producto
+        const updatedProducts = products.filter(product => product.id_articulo !== productToDelete.id_articulo);
+        setProducts(updatedProducts);
+        
+        // Actualizar el total
+        const newTotal = updatedProducts.reduce((acc, product) => acc + parseFloat(product.costo), 0);
+        setTotal(newTotal);
+      }
+    })
+    .catch(error => {
+      console.error('Error al eliminar el producto del carrito:', error);
+    });
+  };
+
   const handleGoToPay = () => {
     // Redirige al usuario al componente FormularioPago
     navigate('/formulario_pago');
@@ -36,9 +58,9 @@ const Carrito = ({ allProducts, onDeleteProduct, onCleanCart }) => {
                 <img src={product.img} alt={product.nombre} />
                 <div className="carrito-item-info">
                   <p className='nombrebici' >{product.nombre}</p>
-                  <p className='cantidad'>Cantidad: {product.cantidad}</p>
+                  
                   <p className='costo'>Precio: ${product.costo}</p>
-                  <button className='eliminar' onClick={() => onDeleteProduct(product)}>Eliminar</button>
+                  <button className='eliminar' onClick={() => handleDeleteProduct(product)}>Eliminar</button>
                 </div>
               </div>
             ))
@@ -47,8 +69,8 @@ const Carrito = ({ allProducts, onDeleteProduct, onCleanCart }) => {
           )}
         </div>
         <div className="cart-total">
-          <h3>Total:</h3>
-          <p>${total}</p>
+          <h3 className='total' >Total:</h3>
+          <p className='total' >${total}</p>
         </div>
         <button className="btn-go-to-pay" onClick={handleGoToPay}>Ir a pagar</button>
        

@@ -163,7 +163,17 @@ router.get('/carrito/:idUser', async(req, res)=>{
         res.status(500).json({message: error.message})
     }
 })
-
+router.delete('/carrito/:userId/:productId', async (req, res) => {
+    const { userId, productId } = req.params;
+    try {
+      await datacontroler.deleteProductFromCart(userId, productId);
+      res.json({ success: true });
+    } catch (error) {
+      console.error('Error al eliminar producto del carrito:', error);
+      res.status(500).json({ success: false, message: 'Error interno del servidor' });
+    }
+  });
+  
 
 
 module.exports = router;

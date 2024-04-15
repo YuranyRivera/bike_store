@@ -26,19 +26,16 @@ body {
 	position: relative;
 }
 
-.count-products {
-	position: absolute;
-	top: 55%;
-	right: 0;
-	background-color: #000;
-	color: #fff;
-	width: 25px;
-	height: 25px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 50%;
-	
+.container-cart-products {
+    position: absolute; /* Cambiar a posición fija */
+    right: 0px;
+    top: 0px;
+    bottom: 0; /* Establece el borde inferior en la parte inferior de la ventana */
+    background-color: #fff;
+    width: 400px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 1000; /* Ajusta el valor del z-index según sea necesario para que el carrito se superponga a otros elementos */
 }
 
 #contador-productos {
@@ -202,7 +199,7 @@ body {
     border-width: 0;
     background-color: #0038fe;
     font-weight: 500;
-    width: 30%;
+    width: 40%;
     box-shadow:0px 6px 6px rgba(0, 0, 0, 0.3);
 	margin-left: 20px;
 }
@@ -214,4 +211,8 @@ body {
   
 .carrito-item img {
 	margin-right: 15px; 
+}
+.total {
+	font-size: 25px;
+    font-weight: bold;
 }

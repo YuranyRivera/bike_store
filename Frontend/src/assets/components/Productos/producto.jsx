@@ -3,7 +3,7 @@ import "../Productos/productos.css";
 import imag1 from "../../img/homepeq1.png";
 import imag2 from "../../img/homepeq2.png";
 import imag3 from "../../img/homepeq3.png";
-
+import { Link } from 'react-router-dom';
 
 function FondoBici(){
   return (
@@ -15,7 +15,7 @@ function FondoBici(){
           <div className="box-img">
             <img src= {imag1}  className="bici"  alt="imagen" />
             <div className="frase">Nuestro equipo de expertos está aquí para ayudarte a encontrar la bicicleta perfecta para ti</div>
-            <a href="#" className="btn-imgs">Ver producto</a>
+            <Link to="/bicicletas" className="btn-imgs">Ver producto</Link>
           </div>
         </div>
 
@@ -23,7 +23,7 @@ function FondoBici(){
           <div className="box-img">
             <img src= {imag2}  className="bici"  alt="imagen" />
             <div className="frase1">Nuestro equipo de expertos está aquí para ayudarte a encontrar la bicicleta perfecta para ti</div>
-            <a href="#" className="btn-imgs">Ver producto</a>
+            <Link to="/accesorio" className="btn-imgs">Ver producto</Link>
           </div>
         </div>
 
@@ -31,7 +31,7 @@ function FondoBici(){
           <div className="box-img">
             <img src= {imag3}  className="bici" alt="imagen" />
             <div className="frase">Podrás explorar senderos desafiantes y disfrutar de la naturaleza al máximo</div>
-            <a href="#" className="btn-imgs">Ver producto</a>
+            <Link to="/vestuario" className="btn-imgs">Ver producto</Link>
           </div>
         </div>
       </div>

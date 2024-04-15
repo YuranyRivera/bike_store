@@ -159,7 +159,7 @@ function Registro() {
             </div>
             <div className="bottom-form">
               <div className="no-acount">¿Ya tienes cuenta?</div>
-              <Link to ="/Inicio" className="signup">
+              <Link to ="/" className="signup">
                 Iniciar sesión</Link>
             </div>
           </form>

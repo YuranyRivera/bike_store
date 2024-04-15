@@ -1,0 +1,54 @@
+.logout-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 200px;
+    height: auto; /* Cambiado a auto para ajustarse al contenido */
+    top: 115px;
+    right: 245px;
+    background-color: white;
+    padding: 20px; /* Aumentado el espacio de relleno */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 1; /* Añadido inicialmente */
+    transition: opacity 0.3s ease; /* Añadida la transición */
+
+}
+
+.cerrar {
+    width: 100%;
+    padding: 10px; /* Aumentado el espacio de relleno */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: blue; /* Cambiado el color de fondo */
+    color: white; /* Cambiado el color del texto */
+    margin-top: 10px; /* Aumentado el espacio superior */
+}
+
+.cerrar:hover {
+    background-color: #0056b3; /* Cambiado el color de fondo al pasar el ratón */
+}
+
+.cancelar {
+    width: 100%;
+    padding: 10px; /* Aumentado el espacio de relleno */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #ddd; /* Cambiado el color de fondo */
+    color: #333; /* Cambiado el color del texto */
+    margin-top: 10px; /* Aumentado el espacio superior */
+}
+
+.cancelar:hover {
+    background-color: #c0c0c0; /* Cambiado el color de fondo al pasar el ratón */
+}
+
+.logout-modal p {
+    text-align: center;
+    margin-bottom: 15px; /* Aumentado el espacio inferior */
+}

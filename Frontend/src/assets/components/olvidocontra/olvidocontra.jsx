@@ -22,7 +22,7 @@ function OlvidoContra() {
                         <label><u className="contenedor">Te enviaremos un código a tu correo o teléfono</u></label>
                     </div>
                     <div className="btn">
-                        <button type="submit" id="btnSubmit" disabled>Siguiente</button>
+                        <button className='siguiente' type="submit" id="btnSubmit" disabled>Siguiente</button>
                     </div>
                 </form>
             </div>

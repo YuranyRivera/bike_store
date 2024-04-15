@@ -21,7 +21,7 @@ function Contactanos() {
             <label htmlFor="mensaje">Mensaje:</label>
             <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
-            <button type="submit">Enviar</button>
+            <button className='enviar' type="submit">Enviar</button>
         </form>
     </div>
 </div>

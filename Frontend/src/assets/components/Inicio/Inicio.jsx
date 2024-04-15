@@ -112,7 +112,7 @@ function Inicio({ setIdUser }) {
             <h5>¿Olvidaste tu contraseña?</h5>
           </Link>
           <div className="btn">
-            <button type="submit">Iniciar sesión</button>
+            <button className='iniciar' type="submit">Iniciar sesión</button>
           </div>
           <div className="bottom-form">
             <div className="no-acount">¿No tienes cuenta?</div>

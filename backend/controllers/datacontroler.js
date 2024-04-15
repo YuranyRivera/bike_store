@@ -230,4 +230,20 @@ const procesarPagoContraEntrega = async (req, res) => {
     }
 };
 
-module.exports = {procesarPagoContraEntrega, addProductCarrito, getProductCarrito, loginUser, getAllUsers, insertUser, insertarDatosFormulario, insertarContacto, getAllProducts, getProductsByCategory, getProductsBicicleta, getProductsAccesorios, getProductById};
+async function deleteProductFromCart(userId, productId) {
+    try {
+      console.log('Eliminando producto del carrito...');
+      const client = await pool.connect();
+      const queryText = 'DELETE FROM carrito WHERE user_id = $1 AND product_id = $2';
+      const values = [userId, productId];
+      await client.query(queryText, values);
+      client.release();
+      console.log('Producto eliminado del carrito con éxito');
+      return { success: true };
+    } catch (error) {
+      console.error('Error al eliminar producto del carrito:', error);
+      throw error;
+    }
+  }
+
+module.exports = {deleteProductFromCart, procesarPagoContraEntrega, addProductCarrito, getProductCarrito, loginUser, getAllUsers, insertUser, insertarDatosFormulario, insertarContacto, getAllProducts, getProductsByCategory, getProductsBicicleta, getProductsAccesorios, getProductById};
